@@ -2,6 +2,9 @@
 
 ## 2026-10-30
 
+- **接入官方 App Store 下载跳转链接 (`https://apps.apple.com/app/id6828810863`)**：
+  - 在 `site.config.json` 中配置 `links.appStore: "https://apps.apple.com/app/id6828810863"`，自动注入全站 JSON-LD `SoftwareApplication.installUrl`、`llms.txt`、`llms-full.txt` 与英文档案；
+  - 在 `index.html`、`index.en.html`、`en/index.html` 的顶部导航栏 CTA、首屏主下载按钮（`.appstore-btn`）、三档价格方案卡片按钮（`#pricing`）及页脚链接中接入 App Store 官方跳转链接（同时保留「先试玩交互演练舱」与「查看 .p8 密钥配置指南」快捷入口），并在 `support.html` / `support.en.html` 补充商店直达入口。
 - **修复浏览器旧版 `style.css` 缓存导致样式错位并新增 iPhone Duo 双屏截图展示 (`style.css`, `index.html`, `index.en.html`, `en/*.html`, `tools/build_devlog.py`)**：
   - **原因**：首次部署后升级企业级 `style.css` 时，`<link rel="stylesheet" href="style.css">` 未带版本哈希参数，导致浏览器直接复用首次缓存的旧版暖米色样式表（缺失 `.appstore-btn` 等新类名，使得 Apple SVG 图标失去尺寸约束放大）；
   - **修复**：全站所有 HTML 页面及生成脚本统一加上缓存穿透版本号 `style.css?v=20261030v3`，为 `<svg>` 补齐原生 `width="22" height="22"` 属性兜底，在 `style.css` 中同时兼容 `.appstore-btn` / `.store-btn` / `.hide-sm` / `.updated` / `.pager`（全站 20 个 HTML 页面 CSS 类覆盖率 100%），并在 `#shots` 实机画廊中新增第 07 幕 **iPhone Duo 折叠双屏工作台** 海报。

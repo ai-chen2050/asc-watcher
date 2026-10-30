@@ -8,6 +8,7 @@
 - **Also known as**: asc-watcher, ASC Watcher App, ASC 开发者看板, App Store Connect 销量监控
 - **Positioning**: 100% local-first App Store Connect sales, first-time downloads, review replies & release companion
 - **Platforms**: iOS / Android
+- **App Store**: https://apps.apple.com/app/id6828810863
 
 ## Core Features
 

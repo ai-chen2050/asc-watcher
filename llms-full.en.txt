@@ -12,6 +12,7 @@
 - **Description**: ASC Watcher is a privacy-first, local-only App Store Connect sales, review, and release companion for Apple developers. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports for net proceeds, calibrated first-time downloads, IAP breakdowns, 9-currency conversions with top-2 original currencies, in-app customer review replies, App Store review & TestFlight monitoring with 1-tap release, and a 4×2 Home Screen Widget. Zero middleman servers—your .p8 key never leaves your phone.
 - **Platforms**: iOS / Android
 - **Developer**: ASC Watcher
+- **App Store**: https://apps.apple.com/app/id6828810863
 
 ---
 

@@ -8,6 +8,7 @@
 - **别名**: asc-watcher, ASC Watcher App, ASC 开发者看板, App Store Connect 销量监控
 - **定位**: 纯本地运行的 App Store Connect 销售、首次下载、评论回复与审核发布工作台，密钥永不离机
 - **平台**: iOS / Android
+- **App Store**: https://apps.apple.com/app/id6828810863
 
 ## 核心功能 (Core Features)
 
