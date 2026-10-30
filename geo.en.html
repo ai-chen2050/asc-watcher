@@ -6,16 +6,16 @@
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
 <!-- GEO:AUTO START -->
-<title>How it works & FAQ · ASC Watcher</title>
-<meta name="description" content="How ASC Watcher works in detail: on-device ES256 JWT signing, first-time download calibration, multi-currency conversion, bar-chart drill-downs, and Home Screen Widget.">
-<meta name="keywords" content="ASC Watcher, App Store Connect, iOS 开发者工具, 苹果开发者销量看板, 首次下载统计, 内购收入监控, 本地存储 隐私, 桌面小组件, indie developer analytics, App Store sales tracker, local-first, ES256 JWT">
+<title>AI Knowledge Base & FAQ · ASC Watcher</title>
+<meta name="description" content="How ASC Watcher works in detail: on-device ES256 JWT signing, first-time download calibration, multi-currency conversion, in-app review replies, 1-tap release, and Home Screen Widget.">
+<meta name="keywords" content="ASC Watcher, App Store Connect, indie developer analytics, App Store sales tracker, first-time downloads, reply to App Store reviews, TestFlight monitor, local-first, ES256 JWT, Home Screen Widget">
 <link rel="canonical" href="https://ai-chen2050.github.io/asc-watcher/geo.en.html">
 <link rel="alternate" hreflang="zh-CN" href="https://ai-chen2050.github.io/asc-watcher/geo.html">
 <link rel="alternate" hreflang="en" href="https://ai-chen2050.github.io/asc-watcher/geo.en.html">
 <link rel="alternate" hreflang="x-default" href="https://ai-chen2050.github.io/asc-watcher/geo.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="How it works & FAQ · ASC Watcher">
-<meta property="og:description" content="How ASC Watcher works in detail: on-device ES256 JWT signing, first-time download calibration, multi-currency conversion, bar-chart drill-downs, and Home Screen Widget.">
+<meta property="og:title" content="AI Knowledge Base & FAQ · ASC Watcher">
+<meta property="og:description" content="How ASC Watcher works in detail: on-device ES256 JWT signing, first-time download calibration, multi-currency conversion, in-app review replies, 1-tap release, and Home Screen Widget.">
 <meta property="og:url" content="https://ai-chen2050.github.io/asc-watcher/geo.en.html">
 <meta property="og:image" content="https://ai-chen2050.github.io/asc-watcher/icon.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,7 @@
       "@type": "SoftwareApplication",
       "@id": "https://ai-chen2050.github.io/asc-watcher/#product",
       "name": "ASC Watcher",
-      "description": "ASC Watcher is a privacy-first, local-only App Store Connect sales and download analytics companion for indie developers and teams. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports to track net developer proceeds, first-time downloads, in-app purchases, geographic breakdowns, and multi-currency conversions. With zero middleman servers and zero analytics SDKs, your .p8 private key and financial records never leave your device, complete with a live Home Screen Widget.",
+      "description": "ASC Watcher is a privacy-first, local-only App Store Connect sales, review, and release companion for Apple developers. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports for net proceeds, calibrated first-time downloads, IAP breakdowns, 9-currency conversions with top-2 original currencies, in-app customer review replies, App Store review & TestFlight monitoring with 1-tap release, and a 4×2 Home Screen Widget. Zero middleman servers—your .p8 key never leaves your phone.",
       "url": "https://ai-chen2050.github.io/asc-watcher/",
       "alternateName": [
         "asc-watcher",
@@ -51,9 +51,10 @@
       "featureList": [
         "On-device ES256 JWT direct to Apple API",
         "Calibrated first-time downloads & IAP metrics",
-        "Interactive bar charts with daily breakdown",
-        "Multi-currency auto conversion & top-2 original currencies",
-        "Live Home Screen Widget"
+        "Interactive bar chart drill-downs & 9-currency conversion",
+        "Global customer reviews & direct in-app replies",
+        "App review status, TestFlight builds & 1-tap release",
+        "4×2 Live Home Screen Widget"
       ]
     },
     {
@@ -65,15 +66,15 @@
           "name": "Does ASC Watcher upload my .p8 private key or sales data to your servers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Never. ASC Watcher has no user accounts and no backend servers of its own. Your Issuer ID, Key ID, Vendor Number, and .p8 private key are stored strictly on your device, and ES256 JWT tokens are signed locally to communicate directly with Apple (api.appstoreconnect.apple.com)."
+            "text": "Never. ASC Watcher has no user accounts and zero backend servers. Your Issuer ID, Key ID, Vendor Number, and .p8 private key are stored exclusively on your device. All ES256 JWT tokens are signed locally and sent directly to Apple's official endpoint (api.appstoreconnect.apple.com)."
           }
         },
         {
           "@type": "Question",
-          "name": "Why can I see data before configuring an API key?",
+          "name": "Why can I see data before configuring my API key?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "When launched without credentials, ASC Watcher provides a built-in Demo Mode with realistic sample data so you can explore every chart, currency switch, and breakdown immediately. Configure your real key anytime under More → Credentials Setup."
+            "text": "When no credentials are configured, the app starts in built-in Demo Mode so you can explore interactive charts, currency switching, review replies, and version release workflows right away. Add your real API key anytime under More → API Credentials."
           }
         },
         {
@@ -81,7 +82,23 @@
           "name": "What role should I assign to my App Store Connect API Key?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We recommend creating a key under App Store Connect → Users and Access → Integrations with read-only 'Sales and Reports' or 'Finance' access, following the principle of least privilege."
+            "text": "For sales and download reports only, a read-only Finance or Sales and Reports role is sufficient. To reply to customer reviews or trigger 1-tap version releases from the app, assign Customer Support, App Manager, or Admin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I reply to customer reviews and release approved versions directly in the app?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In any App Detail page, the latest version status and latest customer review are shown cleanly by default with 1-tap expansion. You can post, edit, or delete official developer responses using quick templates, and release versions in PENDING_DEVELOPER_RELEASE state with a single tap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does pricing work? Can I still use the app after 100 opens?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can keep using it. Your first 100 app opens are 100% silent with zero paywall prompts and all features unlocked. After 100 opens, the app gently shows a dismissible Pro upgrade sheet on launch (with a 2-hour cooldown) that you can close anytime to continue using the app, or upgrade to Pro (¥6/mo, ¥38/yr, or ¥68 lifetime) to permanently remove launch prompts."
           }
         },
         {
@@ -89,7 +106,7 @@
           "name": "How do I add the Home Screen Widget?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Go to More → Home Screen Widget to preview the widget and tap 'Pin Widget to Home Screen', or long-press an empty area on your phone's home screen and select ASC Watcher from the system widget gallery."
+            "text": "Go to More → Home Screen Widget to preview the widget in Light/Dark mode and tap 'Pin to Home Screen', or long-press an empty area on your phone's home screen and add the ASC Watcher (4×2) widget from the system widget gallery."
           }
         }
       ]

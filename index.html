@@ -5,17 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="style.css">
+
+<!-- 下面这一段由 tools/gen_geo.py 从 site.config.json 生成，勿手改 -->
 <!-- GEO:AUTO START -->
-<title>ASC Watcher · 纯本地运行的 App Store Connect 销售、首次下载与内购实时看板，密钥永不离机</title>
-<meta name="description" content="ASC Watcher 官网：专为 Apple 开发者打造的本地 App Store Connect 销售、首次下载、内购走势与桌面小组件看板，.p8 密钥仅存本机。">
-<meta name="keywords" content="ASC Watcher, App Store Connect, iOS 开发者工具, 苹果开发者销量看板, 首次下载统计, 内购收入监控, 本地存储 隐私, 桌面小组件, indie developer analytics, App Store sales tracker, local-first, ES256 JWT">
+<title>ASC Watcher · 纯本地运行的 App Store Connect 销售、首次下载、评论回复与审核发布工作台，密钥永不离机</title>
+<meta name="description" content="ASC Watcher 官网：专为 Apple 开发者打造的纯本地 App Store Connect 销售、首次下载、评论回复、审核监控与桌面小组件工作台，.p8 密钥仅存本机。">
+<meta name="keywords" content="ASC Watcher, App Store Connect, iOS 开发者工具, 苹果开发者销量看板, 首次下载统计, 内购收入监控, 回复 App Store 评论, 版本审核状态监控, 本地存储 隐私, 桌面小组件">
 <link rel="canonical" href="https://ai-chen2050.github.io/asc-watcher/index.html">
 <link rel="alternate" hreflang="zh-CN" href="https://ai-chen2050.github.io/asc-watcher/index.html">
 <link rel="alternate" hreflang="en" href="https://ai-chen2050.github.io/asc-watcher/index.en.html">
 <link rel="alternate" hreflang="x-default" href="https://ai-chen2050.github.io/asc-watcher/index.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ASC Watcher · 纯本地运行的 App Store Connect 销售、首次下载与内购实时看板，密钥永不离机">
-<meta property="og:description" content="ASC Watcher 官网：专为 Apple 开发者打造的本地 App Store Connect 销售、首次下载、内购走势与桌面小组件看板，.p8 密钥仅存本机。">
+<meta property="og:title" content="ASC Watcher · 纯本地运行的 App Store Connect 销售、首次下载、评论回复与审核发布工作台，密钥永不离机">
+<meta property="og:description" content="ASC Watcher 官网：专为 Apple 开发者打造的纯本地 App Store Connect 销售、首次下载、评论回复、审核监控与桌面小组件工作台，.p8 密钥仅存本机。">
 <meta property="og:url" content="https://ai-chen2050.github.io/asc-watcher/index.html">
 <meta property="og:image" content="https://ai-chen2050.github.io/asc-watcher/icon.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +30,7 @@
       "@type": "SoftwareApplication",
       "@id": "https://ai-chen2050.github.io/asc-watcher/#product",
       "name": "ASC Watcher",
-      "description": "ASC Watcher 是专为 Apple 独立开发者与团队打造的本地优先 App Store Connect 销售与下载监控工具。通过官方 ES256 JWT 直连 Apple 接口，实时聚合每日与月度 TSV 报表，精准还原开发者净收益、首次下载量、内购与订阅明细、全球国家/地区分布以及多币种自动折算。无中转服务器、无第三方统计 SDK，您的 .p8 私钥与财务数据 100% 保存在手机本机，并支持手机系统桌面小组件实时速览。",
+      "description": "ASC Watcher 是专为 Apple 独立开发者与团队打造的本地优先 App Store Connect 移动工作台。通过设备端 ES256 JWT 直连 Apple 官方接口，实时聚合每日与月度 TSV 报表，精准还原开发者净收益、首次下载量、内购明细、9 大币种折算与前 2 大原始币种透视，并支持在 App 内直接回复用户评论、监控版本审核与 TestFlight 状态、过审一键发布以及 4×2 手机桌面小组件。无中转服务器、无统计 SDK，您的 .p8 私钥 100% 保存在本机。",
       "url": "https://ai-chen2050.github.io/asc-watcher/",
       "alternateName": [
         "asc-watcher",
@@ -51,9 +53,10 @@
       "featureList": [
         "本机 ES256 签名直连 Apple 官方接口",
         "精准对齐 ASC 后台的首次下载与内购统计",
-        "交互式柱状图与当日构成拆解",
-        "多币种自动折算与前二原始币种透视",
-        "手机系统桌面小组件（Home Screen Widget）"
+        "交互式柱状图拆解 + 9 大币种与前二原币透视",
+        "多国用户评分评论查看与 App 内直接回复",
+        "版本审核状态监控、TestFlight 速览与过审一键发布",
+        "4×2 手机系统桌面小组件（Home Screen Widget）"
       ]
     },
     {
@@ -70,10 +73,10 @@
         },
         {
           "@type": "Question",
-          "name": "为什么没有配置 API 密钥也能看到数据？",
+          "name": "为什么没有配置 API 密钥也能看到演示数据？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换与多维拆解。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。"
+            "text": "首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换、评论回复与版本发布流程。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。"
           }
         },
         {
@@ -81,15 +84,31 @@
           "name": "应该给 API Key 分配什么权限角色？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "建议在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中创建一个仅勾选「财务（Finance）」或「销售和趋势（Sales and Reports）」只读权限的密钥，既能完整拉取报表，又遵循最小权限安全原则。"
+            "text": "如果您只需查看销售与下载报表，在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中分配「财务（Finance）」或「销售和趋势（Sales and Reports）」只读角色即可；如果您还希望在 App 内直接回复用户评论或一键发布过审版本，建议分配「客户支持（Customer Support）」或「App 管理（App Manager）/ 管理（Admin）」角色。"
           }
         },
         {
           "@type": "Question",
-          "name": "如何添加手机桌面小组件？",
+          "name": "能在 App 里面直接回复用户评论或发布过审新版本吗？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher 并拖入桌面。"
+            "text": "可以。进入任意应用详情页，底部的「版本与审核状态」与「用户评分与评论」默认仅展示最新 1 条以保持页面清爽，点击即可展开全部。您可以直接使用快捷模板或自定义文字发布/修改/删除官方开发者回复，也可以对处于「过审 · 待手动发布（PENDING_DEVELOPER_RELEASE）」的版本一键触发立即上架。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ASC Watcher 怎么收费？满 100 次打开后还能继续免费用吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以继续免费使用。前 100 次打开应用完全静默零弹窗、开放全部核心功能。满 100 次后并不是锁死不能用，而是进入 App 时会自动弹出一次 Pro 订阅引导页（带 2 小时冷却保护，不会频繁打扰），您可以手动点击右上角关闭并继续使用全部功能；若您愿意支持独立开发或希望永久消除启动弹窗，可选择 ¥6/月（$0.99）、¥38/年（$4.99）连续订阅，或 ¥68（$9.99）一次性终身买断。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何添加手机桌面小组件（Home Screen Widget）？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher (4×2) 并拖入桌面。"
           }
         }
       ]
@@ -154,85 +173,880 @@
   })();
 </script>
 <!-- GEO:AUTO END -->
+
+<script>
+  (function(){try{var t=localStorage.getItem('theme');
+    if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
 </head>
 <body>
 
+<div class="scroll-prog" id="prog"></div>
+
 <nav>
-  <div class="wrap" style="display:flex;align-items:center;gap:20px;height:64px">
-    <a class="brand" href="index.html" style="display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none">
-      <img src="icon.png" alt="ASC Watcher" width="32" height="32" style="border-radius:8px">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img src="icon.png" alt="ASC Watcher" width="34" height="34">
       <span>ASC Watcher</span>
+      <span class="brand-badge">LOCAL-FIRST</span>
     </a>
-    <span style="flex:1"></span>
-    <a href="#features">核心特性</a>
-    <a href="geo.html">机制与问答</a>
-    <a href="devlog.html">开发日记</a>
-    <a href="support.html">技术支持</a>
-    <a href="index.en.html">English</a>
+    <span class="nav-links">
+      <a href="#features">核心能力</a>
+      <a href="#playground">交互演练舱</a>
+      <a href="#shots">实机真容</a>
+      <a href="#compare">全景对比</a>
+      <a href="#pricing">价格方案</a>
+      <a href="#faq">常见问题</a>
+      <a href="geo.html" class="hide-sm">机制知识库</a>
+      <a href="devlog.html" class="hide-sm">开发日记</a>
+      <a href="support.html">支持</a>
+      <button class="theme-btn" type="button" aria-label="English" onclick="location.href='index.en.html'">EN</button>
+      <button class="theme-btn" id="theme-toggle" type="button" aria-label="切换主题">🌙</button>
+      <a class="nav-cta" href="#playground">⚡ 立即体验</a>
+    </span>
   </div>
 </nav>
 
-<main class="wrap prose">
-  <section style="padding:40px 0 24px">
-    <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px">
-      <img src="icon.png" alt="ASC Watcher Icon" width="76" height="76" style="border-radius:18px;box-shadow:0 10px 28px rgba(59,130,246,0.25)">
-      <div>
-        <p class="kicker" style="margin:0 0 4px">LOCAL-FIRST APP STORE CONNECT COMPANION</p>
-        <h1 style="margin:0">ASC Watcher</h1>
+<header class="hero" id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="wrap">
+    <div class="eyebrow">🚀 原生打造 · 零中转服务器架构 · 设备端 ES256 直连 Apple 官方 API</div>
+    <div class="app-badge">
+      <div class="ring"></div>
+      <img src="icon.png" alt="ASC Watcher App Icon">
+    </div>
+    <h1 class="grad-text">ASC Watcher</h1>
+    <div class="tag grad-text">把 App Store Connect 装进手机桌面，密钥永不离机</div>
+    <p class="pitch">
+      专为 Apple 独立开发者与团队打造的本地优先销售、首次下载、评论回复与审核发布移动工作台。<br>
+      无需注册账号、无任何中转服务器，您的 <code>.p8</code> 私钥 100% 保存在手机本机，直连 Apple 官方接口实时拉取财务与运营数据。
+    </p>
+    <div class="cta-row">
+      <a class="appstore-btn" href="#playground">
+        <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="t"><small>iOS &amp; Android 双端</small><b>先试玩交互演练舱</b></span>
+      </a>
+      <a class="appstore-btn alt" href="support.html">
+        <span class="t"><small>30 秒极速接入</small><b>查看 .p8 密钥配置指南 →</b></span>
+      </a>
+    </div>
+    <div class="trust-badges">
+      <span class="trust-pill">🔒 .p8 私钥 100% 本地沙盒存储</span>
+      <span class="trust-pill">📊 首次下载口径对齐 ASC 网页端</span>
+      <span class="trust-pill">💬 App 内直接回复全球用户评论</span>
+      <span class="trust-pill">🚀 过审版本手机端一键发布上架</span>
+      <span class="trust-pill">📱 4×2 手机系统桌面小组件</span>
+    </div>
+
+    <!-- 首屏双舞台实机预览 -->
+    <div class="hero-showcase">
+      <div class="hero-stage-card">
+        <div class="stage-top">
+          <div>
+            <strong style="font-size:15px;color:var(--ink);">📊 全账号实时销售与首次下载看板</strong>
+            <small style="display:block;font-size:12px;color:var(--sub);">MONTHLY 历史月报 + DAILY 近期日报自动去重拼接 · 9 大币种折算</small>
+          </div>
+          <span class="stage-pill">ES256 On-Device</span>
+        </div>
+        <div class="hero-kpi-grid">
+          <div class="hero-kpi">
+            <small>开发者净收益</small>
+            <strong>$43.74</strong>
+            <span>¥206.21 + $12.83</span>
+          </div>
+          <div class="hero-kpi">
+            <small>首次下载 (Type 1/1F)</small>
+            <strong>307</strong>
+            <span>昨日 +4 首次下载</span>
+          </div>
+          <div class="hero-kpi">
+            <small>内购与付费笔数</small>
+            <strong>10</strong>
+            <span>IA1 / IA9 / IAY</span>
+          </div>
+        </div>
+        <div class="hero-app-rows">
+          <div class="hero-app-row">
+            <div class="hero-app-left">
+              <div class="hero-app-ic" style="background:rgba(16,185,129,0.15);color:#10b981;">🥗</div>
+              <div>
+                <b>吃好饭 - AI冰箱管家</b>
+                <small>top.chihaofan.app · 126 首次下载 · 8 支付</small>
+              </div>
+            </div>
+            <div class="hero-app-right">
+              <b>$30.91</b>
+              <small>(¥206.21)</small>
+            </div>
+          </div>
+          <div class="hero-app-row">
+            <div class="hero-app-left">
+              <div class="hero-app-ic" style="background:rgba(139,92,246,0.15);color:#8b5cf6;">👗</div>
+              <div>
+                <b>DressWell - 3D 虚拟试衣间</b>
+                <small>top.chuanhaoyi.aidress · 110 首次下载 · 2 支付</small>
+              </div>
+            </div>
+            <div class="hero-app-right">
+              <b>$12.83</b>
+              <small>($6.79 + ₹575.55)</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stage-card">
+        <div class="stage-top">
+          <div>
+            <strong style="font-size:15px;color:var(--ink);">📱 手机桌面 4×2 小组件 &amp; 审核评论速览</strong>
+            <small style="display:block;font-size:12px;color:var(--sub);">无需频繁打开网页后台 · 桌面一眼掌握净收益与过审状态</small>
+          </div>
+          <span class="stage-pill emerald">Live Widget</span>
+        </div>
+        <div class="widget-preview-box">
+          <div class="widget-head">
+            <span>⚡ ASC Watcher · 实时看板</span>
+            <span>刚刚同步 · USD</span>
+          </div>
+          <div class="widget-metrics">
+            <div class="widget-cell">
+              <small>累计开发者净收益</small>
+              <b class="em">$43.74</b>
+            </div>
+            <div class="widget-cell">
+              <small>昨日首次下载</small>
+              <b>+4</b>
+            </div>
+            <div class="widget-cell">
+              <small>累计首次下载</small>
+              <b>307</b>
+            </div>
+            <div class="widget-cell">
+              <small>累计付费与内购</small>
+              <b>10 笔</b>
+            </div>
+          </div>
+        </div>
+        <div class="hero-app-row">
+          <div class="hero-app-left">
+            <div class="hero-app-ic" style="background:rgba(59,130,246,0.15);color:#3b82f6;">🚀</div>
+            <div>
+              <b>iOS v1.3.0 · 过审待手动发布</b>
+              <small>最新状态单条呈现，其余折叠不拥挤</small>
+            </div>
+          </div>
+          <a href="#playground" class="stage-pill" style="text-decoration:none;">去演练舱一键发布 →</a>
+        </div>
       </div>
     </div>
-    <p class="lead" style="font-size:1.18rem;line-height:1.65">
-      纯本地运行的 App Store Connect 销售、首次下载与内购实时监控看板。<br>
-      无需注册账号、无任何中转服务器，您的 <code>.p8</code> 私钥与财务数据 100% 保存在手机本机，设备端 ES256 签名直连 Apple 官方接口。
-    </p>
-    <p style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
-      <a href="geo.html" style="display:inline-block;padding:10px 18px;background:#3B82F6;color:#fff;border-radius:10px;text-decoration:none;font-weight:600">了解技术机制</a>
-      <a href="support.html" style="display:inline-block;padding:10px 18px;border:1px solid rgba(128,128,128,0.3);border-radius:10px;text-decoration:none;font-weight:600">API 密钥配置指南</a>
-    </p>
-  </section>
-
-  <h2 id="features">为什么选择 ASC Watcher</h2>
-  <ul>
-    <li><strong>本机 ES256 签名直连 Apple 官方接口</strong>：您的 Issuer ID、Key ID、Vendor Number 与 <code>.p8</code> 私钥仅保存在手机本地，绝不上传任何第三方云服务器。</li>
-    <li><strong>首次下载与内购精准分离</strong>：严格区分首次下载（Product Type <code>1 / 1F / 1T / F1</code>）、内购订阅（<code>IA1 / IA9 / IAY</code>）与版本自动更新（<code>7 / 7F / 7T</code>），与 App Store Connect 网页端「首次下载次数」口径严丝合缝。</li>
-    <li><strong>柱状图点选构成拆解</strong>：支持切换净收益、首次下载、支付内购历史走势，点击任意一根柱子即可当场展开当天是由哪几个 App、内购项或国家贡献的明细列表。</li>
-    <li><strong>9 大币种实时折算 + 前 2 大原始币种透视</strong>：支持 USD、CNY、EUR、GBP、JPY、HKD、TWD、AUD、CAD 一键切换，并在括号内自动展示占比最高的前 2 个原始入账币种（如 <code>($6.79 + ₹575.55)</code>）。</li>
-    <li><strong>4×2 手机系统桌面小组件（Home Screen Widget）</strong>：将实时净收益、昨日首次下载、累计首次下载与支付笔数固定在手机桌面，下拉刷新自动同步。</li>
-  </ul>
-
-  <h2>与传统第三方统计工具对比</h2>
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr><th>对比维度</th><th>ASC Watcher</th><th>传统云端托管统计工具</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>私钥与财务安全</td><td><code>.p8</code> 私钥仅存手机本地，设备端签名直连 Apple</td><td>要求上传 <code>.p8</code> 私钥到第三方服务器托管</td></tr>
-        <tr><td>下载量统计口径</td><td>精准分离首次下载、内购支付与版本更新，对齐 ASC 网页端</td><td>常将版本更新（Type 7）混入总下载数导致虚高</td></tr>
-        <tr><td>多币种展示</td><td>9 种目标货币实时折算 + 自动展示前 2 大原始入账币种</td><td>仅显示单一折算值或因多币种混加导致符号错误</td></tr>
-        <tr><td>图表交互与桌面组件</td><td>点击柱状图即时展开当日构成列表 + 4×2 手机桌面小组件</td><td>静态图表无明细拆解，无桌面小组件</td></tr>
-      </tbody>
-    </table>
   </div>
+</header>
 
-  <h2>常见问题</h2>
-  <h3>ASC Watcher 会把我的 .p8 私钥或销售数据上传到你们的服务器吗？</h3>
-  <p>绝对不会。ASC Watcher 没有账号系统，也没有任何自建后端服务器。您输入的 Issuer ID、Key ID、Vendor Number 与 <code>.p8</code> 私钥仅保存在您的手机本地存储中，所有 JWT 签名均在设备本地完成后直接请求 Apple 官方接口（<code>api.appstoreconnect.apple.com</code>）。</p>
+<!-- 核心能力 -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Core Features</span>
+      <h2 class="sec-title">六大核心能力，专为 Apple 开发者打磨</h2>
+      <p class="sec-sub">从财务净收益、首次下载校准到评论直接回复与过审一键上架，全流程本机直连</p>
+    </div>
+    <div class="grid">
+      <div class="feat">
+        <div>
+          <div class="ic">🔐</div>
+          <h3>本机 ES256 签名直连 Apple 官方接口</h3>
+          <p>您的 Issuer ID、Key ID、Vendor Number 与 <code>.p8</code> 私钥 100% 保存在手机本地，设备端实时签发 JWT 令牌直连 <code>api.appstoreconnect.apple.com</code>，彻底告别把私钥上传给第三方云服务器的风险。</p>
+        </div>
+        <span class="feat-tag">Zero-Server 零中转架构 →</span>
+      </div>
+      <div class="feat">
+        <div>
+          <div class="ic">📊</div>
+          <h3>精准对齐 ASC 后台的首次下载与内购统计</h3>
+          <p>严格按 Apple 官方 Product Type Identifier 区分首次下载（<code>1 / 1F / 1T / F1</code>）与内购订阅（<code>IA1 / IA9 / IAY</code>），自动剔除版本更新（<code>7 / 7F / 7T</code>），与网页端「首次下载次数」严丝合缝。</p>
+        </div>
+        <span class="feat-tag">MONTHLY + DAILY 智能拼接 →</span>
+      </div>
+      <div class="feat">
+        <div>
+          <div class="ic">📈</div>
+          <h3>交互式柱状图拆解 + 9 大币种与前二原币透视</h3>
+          <p>点击任意一根柱子即可锁定并展开当日构成该总数的具体 App、内购项或国家明细列表；支持 9 种目标货币一键折算，并在括号内自动展示价值最高的前 2 个原始入账币种。</p>
+        </div>
+        <span class="feat-tag">点击柱子当场拆解 →</span>
+      </div>
+      <div class="feat">
+        <div>
+          <div class="ic">💬</div>
+          <h3>多国用户评分评论查看与 App 内直接回复</h3>
+          <p>直连 <code>/v1/customerReviews</code> 与 <code>/v1/customerReviewResponses</code>，支持按星级筛选全球评论，内置快捷回复模板，在手机端直接发布、修改或删除开发者官方回复。</p>
+        </div>
+        <span class="feat-tag">默认展示最新 1 条，视觉清爽 →</span>
+      </div>
+      <div class="feat">
+        <div>
+          <div class="ic">🚀</div>
+          <h3>版本审核状态监控、TestFlight 速览与过审一键发布</h3>
+          <p>实时追踪正在审核、等待审核、被拒、待手动发布与 TestFlight 构建状态；当新版本处于「过审 · 待手动发布」时，无需开电脑即可在手机上一键触发正式上架。</p>
+        </div>
+        <span class="feat-tag">POST /v1/appStoreVersionReleaseRequests →</span>
+      </div>
+      <div class="feat">
+        <div>
+          <div class="ic">📱</div>
+          <h3>4×2 手机系统桌面小组件（Home Screen Widget）</h3>
+          <p>将实时净收益、昨日首次下载、累计首次下载与支付笔数固定在 iOS 与 Android 手机主屏幕，支持浅色/深色实景预览与一键固定到桌面，每次刷新报表自动同步。</p>
+        </div>
+        <span class="feat-tag">iOS WidgetKit &amp; Android AppWidget →</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <h3>为什么没有配置 API 密钥也能看到数据？</h3>
-  <p>首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换与多维拆解。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。</p>
+<!-- 交互演练舱 (Playground-First) -->
+<section id="playground" class="playground-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Interactive Sandbox · Playground-First</span>
+      <h2 class="sec-title">交互演练舱：先在网页上玩透三大工作台</h2>
+      <p class="sec-sub">点击柱状图拆解单日收入、当场回复一条用户评论、或者亲手点一下「过审一键发布」观察端侧遥测</p>
+    </div>
+    <div class="pg-shell">
+      <div class="pg-window">
+        <div class="pg-bar">
+          <span class="pg-dots"><span></span><span></span><span></span></span>
+          <span>ASC Watcher · On-Device API Simulator</span>
+          <span id="pgEndpointBadge">GET /v1/salesReports</span>
+        </div>
+        <div class="pg-body">
+          <div class="seg-tabs">
+            <button class="seg-btn active" type="button" data-tab="0">📊 模式 A · 销量与首次下载拆解</button>
+            <button class="seg-btn" type="button" data-tab="1">💬 模式 B · 用户评论与直接回复</button>
+            <button class="seg-btn" type="button" data-tab="2">🚀 模式 C · 版本审核与过审一键发布</button>
+          </div>
 
-  <h3>应该给 API Key 分配什么权限角色？</h3>
-  <p>建议在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中创建一个仅勾选「财务（Finance）」或「销售和趋势（Sales and Reports）」只读权限的密钥，既能完整拉取报表，又遵循最小权限安全原则。</p>
+          <!-- 模式 A: 销量与柱状图点选拆解 -->
+          <div class="sim-pane active" id="simPane0">
+            <div class="sim-toolbar">
+              <div class="sim-curr-group" id="simMetricGroup">
+                <button class="sim-chip active" type="button" data-metric="proceeds">💰 开发者净收益</button>
+                <button class="sim-chip" type="button" data-metric="downloads">⬇️ 首次下载</button>
+                <button class="sim-chip" type="button" data-metric="iap">💎 内购笔数</button>
+              </div>
+              <div class="sim-curr-group" id="simCurrGroup">
+                <button class="sim-chip active" type="button" data-curr="USD">USD $</button>
+                <button class="sim-chip" type="button" data-curr="CNY">CNY ¥</button>
+                <button class="sim-chip" type="button" data-curr="EUR">EUR €</button>
+                <button class="sim-chip" type="button" data-curr="JPY">JPY ¥</button>
+              </div>
+            </div>
 
-  <h3>如何添加手机桌面小组件？</h3>
-  <p>进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher 并拖入桌面。</p>
-</main>
+            <div class="sim-chart-box">
+              <div class="sim-chart-head">
+                <div>
+                  <small id="simSelectedDayLabel">已锁定：10月30日（点击下方任意柱子切换日期明细）</small>
+                  <strong id="simSelectedDayTotal" style="display:block;margin-top:2px;">$18.40</strong>
+                </div>
+                <small id="simOrigCurrHint">前 2 原始入账：(¥95.20 + $4.99)</small>
+              </div>
+              <div class="sim-bars" id="simBarsContainer"></div>
+              <div class="sim-breakdown" id="simBreakdownList"></div>
+            </div>
+          </div>
+
+          <!-- 模式 B: 用户评论与直接回复 -->
+          <div class="sim-pane" id="simPane1">
+            <div class="sim-review-card">
+              <div class="sim-rev-head">
+                <div>
+                  <span class="sim-stars">★★★★★</span>
+                  <strong style="font-size:14px;margin-left:6px;color:var(--ink);">终于有一款不用上传 .p8 私钥的销量工具了！</strong>
+                </div>
+                <span class="stage-pill">🇨🇳 CN · v1.2.0 · 最新 1 条</span>
+              </div>
+              <p style="font-size:13.5px;color:var(--sub);margin:0;">
+                “之前用过几款统计 App 都要求把 App Store Connect 私钥上传到他们的服务器，一直不敢用。ASC Watcher 纯本机签名直连，还能直接看首次下载和桌面小组件，太安心了！”
+              </p>
+              <div class="sim-dev-response" id="simDevReplyBox">
+                <div style="display:flex;justify-content:space-between;font-size:11.5px;font-weight:800;color:var(--brand-deep);margin-bottom:4px;">
+                  <span>👨‍💻 开发者官方回复 (Developer Response)</span>
+                  <span id="simReplyTime">已发布 · 刚刚</span>
+                </div>
+                <div id="simReplyText">非常感谢您的认可！保护开发者的 .p8 私钥与财务隐私是我们的底线，祝您的 App 销量长虹 🚀</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px;">
+                <button class="sim-chip" type="button" data-tpl="非常感谢您的五星好评与支持！祝您的产品大卖 🎉">🙏 模板：感谢好评</button>
+                <button class="sim-chip" type="button" data-tpl="感谢您的宝贵建议！我们已在下个版本排期优化，敬请期待 🛠">🛠 模板：采纳建议</button>
+                <button class="sim-chip" type="button" data-tpl="您好，请通过 blake.chen94@gmail.com 联系我们以便为您进一步排查 💬">💬 模板：联系支持</button>
+              </div>
+              <div class="sim-reply-box">
+                <input class="sim-reply-input" id="simReplyInput" type="text" value="感谢您的支持！我们已新增过审一键发布功能，欢迎体验 ✨" aria-label="输入开发者回复">
+                <button class="sim-action-btn" type="button" id="simSendReplyBtn">发布官方回复</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 模式 C: 版本审核与过审一键发布 -->
+          <div class="sim-pane" id="simPane2">
+            <div class="sim-ver-card">
+              <div class="sim-ver-row">
+                <div>
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <strong style="font-size:15px;color:var(--ink);">iOS v1.3.0</strong>
+                    <span class="status-badge pending" id="simVerBadge">🎉 过审 · 待手动发布 (PENDING_DEVELOPER_RELEASE)</span>
+                  </div>
+                  <small style="color:var(--sub);display:block;margin-top:4px;" id="simVerSub">
+                    默认仅展示最新 1 个版本状态（其余 3 个历史版本已自动折叠）
+                  </small>
+                </div>
+                <button class="sim-action-btn emerald" type="button" id="simReleaseBtn">🚀 立即发布上架</button>
+              </div>
+              <div class="sim-ver-row">
+                <div>
+                  <strong style="font-size:13.5px;color:var(--ink);">TestFlight Build #24 (1.3.0)</strong>
+                  <small style="color:var(--sub);display:block;">上传于 2 小时前 · 合规加密已通过</small>
+                </div>
+                <span class="status-badge live">✓ VALID 已就绪</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reasoning-box">
+            <div style="font-size:12.5px;font-weight:800;color:var(--brand-deep);margin-bottom:8px;">白盒执行链 (White-box Execution Trace)</div>
+            <div class="reasoning-step"><span class="dot"></span><span id="traceStep1">1. 本机密钥装载：读取本地沙盒 .p8 私钥，生成 ES256 JWT (exp=1200s)</span></div>
+            <div class="reasoning-step"><span class="dot"></span><span id="traceStep2">2. 官方接口直连：请求 api.appstoreconnect.apple.com 流式解压 GZIP TSV 报表</span></div>
+            <div class="reasoning-step"><span class="dot"></span><span id="traceStep3">3. 口径校准渲染：分离 Type 1/1F 首次下载与 IA1/IAY 内购，剔除 Type 7 更新干扰</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="telemetry-panel">
+        <div>
+          <h3 style="font-size:18px;margin-bottom:12px;">终端遥测 (Live Telemetry)</h3>
+          <div class="temp-readout">
+            <div><small style="color:var(--sub)">端侧签名与解析耗时</small><div class="deg" id="telLatency">1.9ms</div></div>
+            <div style="text-align:right;"><small style="color:var(--sub)">第三方云端留存</small><div style="font-size:21px;font-weight:800;color:var(--emerald)">0.0 MB</div></div>
+          </div>
+        </div>
+        <div class="telemetry-list">
+          <div class="telemetry-row"><span>签名算法</span><b>ES256 (ECDSA P-256)</b></div>
+          <div class="telemetry-row"><span>直连目标域名</span><b>api.appstoreconnect.apple.com</b></div>
+          <div class="telemetry-row"><span>当前调用端点</span><b id="telEndpoint">GET /v1/salesReports</b></div>
+          <div class="telemetry-row"><span>中转服务器数量</span><b style="color:var(--emerald)">0 (纯设备直连)</b></div>
+          <div class="telemetry-row"><span>首次下载过滤规则</span><b>1 / 1F / 1T / F1 Only</b></div>
+          <div class="telemetry-row"><span>详情页折叠策略</span><b>仅展最新 1 条 · 其余折叠</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 实机真容截图画廊 -->
+<section id="shots">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Real Device Gallery</span>
+      <h2 class="sec-title">实机真容：浅色与深色模式同样纯粹</h2>
+      <p class="sec-sub">来自真实手机运行的销售看板、应用矩阵、单应用详情拆解与深色模式截图（点击任意截图可放大预览）</p>
+    </div>
+    <div class="shots-strip">
+      <div class="shot-card" data-shot="shots/s-sales.png" data-cap="销售看板 · 净收益、首次下载、内购笔数与按日趋势柱状图">
+        <img src="shots/s-sales.png" alt="ASC Watcher 销售看板实机截图" loading="lazy">
+        <div class="shot-meta">
+          <strong>销售实时看板</strong>
+          <span>净收益 · 首次下载 · 柱状图点选拆解</span>
+        </div>
+      </div>
+      <div class="shot-card" data-shot="shots/s-apps.png" data-cap="应用列表 · 自动展示前 2 大原始结算币种与昨日首次下载角标">
+        <img src="shots/s-apps.png" alt="ASC Watcher 应用列表实机截图" loading="lazy">
+        <div class="shot-meta">
+          <strong>多应用矩阵列表</strong>
+          <span>前 2 大原始币种透视 · 昨日新增角标</span>
+        </div>
+      </div>
+      <div class="shot-card" data-shot="shots/s-detail.png" data-cap="单应用详情 · 首次下载口径对齐、内购与国家/地区排行榜">
+        <img src="shots/s-detail.png" alt="ASC Watcher 应用详情实机截图" loading="lazy">
+        <div class="shot-meta">
+          <strong>单应用深度拆解</strong>
+          <span>内购订阅明细 · 全球国家/地区分布</span>
+        </div>
+      </div>
+      <div class="shot-card" data-shot="shots/s-dark-apps.png" data-cap="深色模式 · 高对比度极夜黑主题下的多应用销量看板">
+        <img src="shots/s-dark-apps.png" alt="ASC Watcher 深色模式应用列表截图" loading="lazy">
+        <div class="shot-meta">
+          <strong>原生深色模式</strong>
+          <span>夜间盯盘不刺眼 · 圆形揭示丝滑切换</span>
+        </div>
+      </div>
+      <div class="shot-card" data-shot="shots/s-dark-more.png" data-cap="更多与偏好设置 · 9 大货币切换、8 国语言、桌面小组件与 API 密钥管理">
+        <img src="shots/s-dark-more.png" alt="ASC Watcher 更多设置页截图" loading="lazy">
+        <div class="shot-meta">
+          <strong>9 币种 &amp; 8 语言支持</strong>
+          <span>桌面小组件预览 · 本机密钥安全管理</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 点击全屏放大查看灯箱 -->
+<div id="lb" class="lightbox" aria-hidden="true" role="dialog">
+  <button id="lbClose" class="lb-close" type="button" aria-label="关闭灯箱">×</button>
+  <img id="lbImg" src="" alt="实机大图">
+  <span id="lbCap" class="lb-cap"></span>
+</div>
+
+<!-- 7 维对比矩阵 -->
+<section id="compare" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">7-Axis Comparison</span>
+      <h2 class="sec-title">和传统第三方云端统计工具相比，有什么不同？</h2>
+      <p class="sec-sub">7 大核心维度横向对比：守住 .p8 私钥安全底线，还原最真实的首次下载与净收益</p>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>对比维度</th>
+            <th class="hl">⚡ ASC Watcher</th>
+            <th>传统第三方云端统计工具 / 网页后台</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>私钥与财务安全</b></td>
+            <td class="hl">✅ <code>.p8</code> 私钥 100% 仅存手机本地，设备端 ES256 签名直连 Apple</td>
+            <td>❌ 要求把 <code>.p8</code> 私钥上传到第三方云服务器托管，存在权限泄露风险</td>
+          </tr>
+          <tr>
+            <td><b>下载量统计口径</b></td>
+            <td class="hl">✅ 精准分离首次下载（1/1F/1T/F1）、内购支付与版本更新，对齐 ASC 网页端</td>
+            <td>❌ 常把版本自动更新（Type 7）混入下载总数导致数据严重虚高</td>
+          </tr>
+          <tr>
+            <td><b>多币种展示与折算</b></td>
+            <td class="hl">✅ 9 种目标货币实时折算 + 括号内自动展示前 2 大原始入账币种</td>
+            <td>❌ 仅显示单一折算值，或因多币种直接相加导致货币符号错乱</td>
+          </tr>
+          <tr>
+            <td><b>图表交互与构成拆解</b></td>
+            <td class="hl">✅ 点击柱状图任意柱子即时展开当日由哪几款 App、内购与国家贡献的明细</td>
+            <td>❌ 静态图表，无法按日下钻查看单日收入与下载来源构成</td>
+          </tr>
+          <tr>
+            <td><b>用户评论与直接回复</b></td>
+            <td class="hl">✅ 支持按星级筛选全球评论，并在 App 内直接发布、修改或删除官方回复</td>
+            <td>❌ 仅能只读查看评论，或必须回电脑网页端登录回复</td>
+          </tr>
+          <tr>
+            <td><b>审核监控与过审一键发布</b></td>
+            <td class="hl">✅ 实时查看版本审核与 TestFlight 状态，过审待发布版本支持手机端一键上架</td>
+            <td>❌ 无版本状态追踪，或不支持手机端触发手动发布请求</td>
+          </tr>
+          <tr>
+            <td><b>商业模式与诚意定价</b></td>
+            <td class="hl">✅ 前 100 次打开零弹窗免打扰，满 100 次仅温和提醒（可手动关闭继续用）；支持 ¥68 买断或 ¥38/年、¥6/月</td>
+            <td>❌ 免费版锁死核心图表，强制昂贵月度或年度连续扣费订阅</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 定价方案 -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">Transparent Pricing</span>
+      <h2 class="sec-title">先陪伴您的产品跑通盈利，再谈付费</h2>
+      <p class="sec-sub">前 100 次打开零弹窗免打扰；满 100 次后也绝不锁死功能，仅在启动时温和提醒（可随时关闭继续使用）</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div>
+          <div class="price-tier">🌱 独立启航版</div>
+          <div class="price-desc">全部核心功能免费开放，满 100 次后仍可手动关闭提示继续使用</div>
+          <div class="price-val">¥0 <small>/ 前 100 次免弹窗</small></div>
+          <ul class="price-list">
+            <li>前 100 次打开应用 100% 静默零弹窗打扰</li>
+            <li>满 100 次后进入 App 自动提示 Pro 页（可手动关闭继续用）</li>
+            <li>全账号销售、首次下载与内购柱状图拆解</li>
+            <li>多国用户评论查看与 App 内直接回复</li>
+            <li>版本审核状态监控与过审一键发布上架</li>
+          </ul>
+        </div>
+        <a class="price-btn" href="#playground">免费开始使用</a>
+      </div>
+
+      <div class="price-card featured">
+        <span class="pop-badge">👑 最受欢迎 · 一次买断</span>
+        <div>
+          <div class="price-tier">👑 Pro 终身买断版</div>
+          <div class="price-desc">只需一杯咖啡钱，一次付费永久消除启动弹窗，终身解锁全部更新</div>
+          <div class="price-val">¥68 <small>/ $9.99 一次性买断</small></div>
+          <ul class="price-list">
+            <li>永久解除 100 次打开后的启动订阅弹窗提醒</li>
+            <li>无限次下拉刷新全量历史月报与按日 TSV 报表</li>
+            <li>App 内无限次发布/修改全球用户评论官方回复</li>
+            <li>过审版本一键发布上架 + 4×2 手机桌面小组件</li>
+            <li>同一 Apple ID / 商店账号多设备一键恢复购买</li>
+          </ul>
+        </div>
+        <a class="price-btn" href="#playground">解锁 Pro 终身买断版</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <div class="price-tier">⚡ Pro 灵活订阅版</div>
+          <div class="price-desc">适合偏好按年或按月弹性订阅的开发者，随时可在系统设置中取消</div>
+          <div class="price-val">¥38 <small>/ 年（或 ¥6 / 月）</small></div>
+          <ul class="price-list">
+            <li>订阅期内享有与 Pro 终身版完全一致的全部特权</li>
+            <li>年度订阅折合每月仅需 ¥3.1（立省 47%）</li>
+            <li>永久免除启动付费墙弹窗，专注盯盘与运营</li>
+            <li>支持随时在 App Store 订阅管理中一键取消</li>
+          </ul>
+        </div>
+        <a class="price-btn" href="#playground">选择灵活订阅</a>
+      </div>
+    </div>
+    <div class="pricing-trust-bar">
+      <span>🔒 Apple / 官方商店安全结算</span>
+      <span>🔄 换机一键「恢复购买」</span>
+      <span>🛡️ .p8 密钥 100% 存本机</span>
+      <span>🙅 满 100 次不锁死功能，可手动关闭弹窗</span>
+    </div>
+  </div>
+</section>
+
+<!-- 常见问题 -->
+<section id="faq" class="faq" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kicker">FAQ</span>
+      <h2 class="sec-title">常见问题解答</h2>
+      <p class="sec-sub">与 site.config.json 及 JSON-LD 结构化数据同源对齐</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>ASC Watcher 会把我的 .p8 私钥或销售数据上传到你们的服务器吗？</summary>
+        <p>绝对不会。ASC Watcher 没有账号系统，也没有任何自建后端服务器。您输入的 Issuer ID、Key ID、Vendor Number 与 .p8 私钥仅保存在您的手机本地存储中，所有 JWT 签名均在设备本地完成后直接请求 Apple 官方接口（api.appstoreconnect.apple.com）。</p>
+      </details>
+      <details class="faq-item">
+        <summary>为什么没有配置 API 密钥也能看到演示数据？</summary>
+        <p>首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换、评论回复与版本发布流程。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。</p>
+      </details>
+      <details class="faq-item">
+        <summary>应该给 API Key 分配什么权限角色？</summary>
+        <p>如果您只需查看销售与下载报表，在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中分配「财务（Finance）」或「销售和趋势（Sales and Reports）」只读角色即可；如果您还希望在 App 内直接回复用户评论或一键发布过审版本，建议分配「客户支持（Customer Support）」或「App 管理（App Manager）/ 管理（Admin）」角色。</p>
+      </details>
+      <details class="faq-item">
+        <summary>能在 App 里面直接回复用户评论或发布过审新版本吗？</summary>
+        <p>可以。进入任意应用详情页，底部的「版本与审核状态」与「用户评分与评论」默认仅展示最新 1 条以保持页面清爽，点击即可展开全部。您可以直接使用快捷模板或自定义文字发布/修改/删除官方开发者回复，也可以对处于「过审 · 待手动发布（PENDING_DEVELOPER_RELEASE）」的版本一键触发立即上架。</p>
+      </details>
+      <details class="faq-item">
+        <summary>ASC Watcher 怎么收费？满 100 次打开后还能继续免费用吗？</summary>
+        <p>可以继续免费使用。前 100 次打开应用完全静默零弹窗、开放全部核心功能。满 100 次后并不是锁死不能用，而是进入 App 时会自动弹出一次 Pro 订阅引导页（带 2 小时冷却保护，不会频繁打扰），您可以手动点击右上角关闭并继续使用全部功能；若您愿意支持独立开发或希望永久消除启动弹窗，可选择 ¥6/月（$0.99）、¥38/年（$4.99）连续订阅，或 ¥68（$9.99）一次性终身买断。</p>
+      </details>
+      <details class="faq-item">
+        <summary>如何添加手机桌面小组件（Home Screen Widget）？</summary>
+        <p>进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher (4×2) 并拖入桌面。</p>
+      </details>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
-    <p>© 2026 ASC Watcher · <a href="geo.html">机制与问答</a> · <a href="devlog.html">开发日记</a> · <a href="support.html">技术支持</a> · <a href="privacy.html">隐私政策</a> · <a href="terms.html">用户协议</a></p>
+    <div class="foot-links">
+      <a href="geo.html">AI 知识库与机制问答</a>
+      <a href="devlog.html">开发日记</a>
+      <a href="support.html">技术支持</a>
+      <a href="privacy.html">隐私政策</a>
+      <a href="terms.html">用户协议</a>
+      <a href="llms.txt">llms.txt</a>
+      <a href="index.en.html">English</a>
+    </div>
+    <p style="margin-top:10px;">© 2026 ASC Watcher · All Rights Reserved. · <a href="mailto:blake.chen94@gmail.com">blake.chen94@gmail.com</a></p>
   </div>
 </footer>
+
+<script>
+  // 1. 顶部滚动进度条
+  (function () {
+    var bar = document.getElementById('prog');
+    if (!bar) return;
+    function upd() {
+      var h = document.documentElement;
+      var p = h.scrollTop / ((h.scrollHeight - h.clientHeight) || 1);
+      bar.style.width = (p * 100) + '%';
+    }
+    window.addEventListener('scroll', upd, { passive: true });
+    upd();
+  })();
+
+  // 2. 明暗主题切换
+  (function () {
+    var btn = document.getElementById('theme-toggle');
+    if (!btn) return;
+    function syncIcon() {
+      var cur = document.documentElement.getAttribute('data-theme');
+      btn.textContent = cur === 'dark' ? '☀️' : '🌙';
+    }
+    syncIcon();
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var cur = document.documentElement.getAttribute('data-theme');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (err) {}
+      syncIcon();
+    });
+  })();
+
+  // 3. 首屏 #heroCanvas 粒子星网动画（带 IntersectionObserver 离屏挂起）
+  (function () {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var w = 0, h = 0, rafId = null, visible = true;
+    var nodes = [];
+    function resize() {
+      w = canvas.width = canvas.parentElement.clientWidth || window.innerWidth;
+      h = canvas.height = canvas.parentElement.clientHeight || 520;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+    for (var i = 0; i < 36; i++) {
+      nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: 1.5 + Math.random() * 2
+      });
+    }
+    function draw() {
+      if (!visible) { rafId = null; return; }
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(59, 130, 246, 0.38)';
+        ctx.fill();
+        for (var j = i + 1; j < nodes.length; j++) {
+          var m = nodes[j];
+          var dx = n.x - m.x, dy = n.y - m.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 135) {
+            ctx.beginPath();
+            ctx.moveTo(n.x, n.y);
+            ctx.lineTo(m.x, m.y);
+            ctx.strokeStyle = 'rgba(6, 182, 212, ' + ((1 - dist / 135) * 0.18).toFixed(3) + ')';
+            ctx.stroke();
+          }
+        }
+      }
+      rafId = requestAnimationFrame(draw);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        visible = entries[0].isIntersecting;
+        if (visible && !rafId) rafId = requestAnimationFrame(draw);
+      });
+      io.observe(canvas);
+    }
+    rafId = requestAnimationFrame(draw);
+  })();
+
+  // 4. 交互演练舱 (Playground-First) 三大工作台逻辑
+  (function () {
+    var rates = { USD: { sym: '$', r: 1 }, CNY: { sym: '¥', r: 7.12 }, EUR: { sym: '€', r: 0.92 }, JPY: { sym: '¥', r: 152 } };
+    var daysData = [
+      { d: '10/24', proceeds: 6.40, downloads: 38, iap: 2, orig: '($4.99 + ¥10.00)', items: [['吃好饭 - AI冰箱管家', 4.20, 21, 1], ['DressWell - 3D试衣间', 2.20, 17, 1]] },
+      { d: '10/25', proceeds: 9.80, downloads: 46, iap: 3, orig: '(¥48.00 + $3.05)', items: [['吃好饭 - AI冰箱管家', 6.80, 25, 2], ['养好娃 - 分龄养育', 3.00, 21, 1]] },
+      { d: '10/26', proceeds: 5.10, downloads: 33, iap: 1, orig: '($5.10)', items: [['DressWell - 3D试衣间', 5.10, 19, 1], ['Louis XVI', 0.0, 14, 0]] },
+      { d: '10/27', proceeds: 12.60, downloads: 54, iap: 4, orig: '(¥68.00 + $3.05)', items: [['吃好饭 - AI冰箱管家', 8.90, 31, 3], ['DressWell - 3D试衣间', 3.70, 23, 1]] },
+      { d: '10/28', proceeds: 8.30, downloads: 41, iap: 2, orig: '($5.50 + €2.60)', items: [['吃好饭 - AI冰箱管家', 5.50, 22, 1], ['养好娃 - 分龄养育', 2.80, 19, 1]] },
+      { d: '10/29', proceeds: 14.90, downloads: 62, iap: 5, orig: '(¥78.00 + ₹320)', items: [['吃好饭 - AI冰箱管家', 9.40, 35, 3], ['DressWell - 3D试衣间', 5.50, 27, 2]] },
+      { d: '10/30', proceeds: 18.40, downloads: 74, iap: 6, orig: '(¥95.20 + $4.99)', items: [['吃好饭 - AI冰箱管家', 11.20, 42, 4], ['DressWell - 3D试衣间', 7.20, 32, 2]] }
+    ];
+    var curMetric = 'proceeds', curCurr = 'USD', curDayIdx = 6;
+    var barsBox = document.getElementById('simBarsContainer');
+    var bdBox = document.getElementById('simBreakdownList');
+    var dayLbl = document.getElementById('simSelectedDayLabel');
+    var dayTot = document.getElementById('simSelectedDayTotal');
+    var origHint = document.getElementById('simOrigCurrHint');
+
+    function fmtVal(dayObj, metric) {
+      if (metric === 'downloads') return dayObj.downloads + ' 首次下载';
+      if (metric === 'iap') return dayObj.iap + ' 笔支付';
+      var c = rates[curCurr];
+      var v = dayObj.proceeds * c.r;
+      return c.sym + (curCurr === 'JPY' ? Math.round(v) : v.toFixed(2));
+    }
+
+    function renderChart() {
+      if (!barsBox) return;
+      var maxV = Math.max.apply(null, daysData.map(function (x) { return x[curMetric]; })) || 1;
+      barsBox.innerHTML = '';
+      daysData.forEach(function (item, idx) {
+        var col = document.createElement('div');
+        col.className = 'sim-bar-col' + (idx === curDayIdx ? ' active' : '');
+        var pct = Math.max(16, Math.round((item[curMetric] / maxV) * 86));
+        var shortV = curMetric === 'proceeds'
+          ? rates[curCurr].sym + (curCurr === 'JPY' ? Math.round(item.proceeds * rates[curCurr].r) : (item.proceeds * rates[curCurr].r).toFixed(1))
+          : item[curMetric];
+        col.innerHTML = '<span class="sim-bar-val">' + shortV + '</span>' +
+                        '<div class="sim-bar-fill" style="height:' + pct + 'px"></div>' +
+                        '<span class="sim-bar-lbl">' + item.d + '</span>';
+        col.addEventListener('click', function () {
+          curDayIdx = idx;
+          renderChart();
+        });
+        barsBox.appendChild(col);
+      });
+
+      var sel = daysData[curDayIdx];
+      dayLbl.textContent = '已锁定：' + sel.d + '（点击任意柱子切换单日构成明细）';
+      dayTot.textContent = fmtVal(sel, curMetric);
+      origHint.textContent = curMetric === 'proceeds' ? ('前 2 原始入账：' + sel.orig) : '口径：已剔除 Type 7 版本自动更新';
+
+      bdBox.innerHTML = '';
+      sel.items.forEach(function (appRow) {
+        var row = document.createElement('div');
+        row.className = 'sim-bd-item';
+        var valTxt = curMetric === 'downloads'
+          ? (appRow[2] + ' 首次下载')
+          : (curMetric === 'iap'
+            ? (appRow[3] + ' 笔内购')
+            : (rates[curCurr].sym + (curCurr === 'JPY' ? Math.round(appRow[1] * rates[curCurr].r) : (appRow[1] * rates[curCurr].r).toFixed(2))));
+        row.innerHTML = '<b>' + appRow[0] + '</b><span>' + valTxt + '</span>';
+        bdBox.appendChild(row);
+      });
+    }
+
+    document.querySelectorAll('#simMetricGroup .sim-chip').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#simMetricGroup .sim-chip').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        curMetric = btn.getAttribute('data-metric');
+        renderChart();
+      });
+    });
+
+    document.querySelectorAll('#simCurrGroup .sim-chip').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#simCurrGroup .sim-chip').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        curCurr = btn.getAttribute('data-curr');
+        renderChart();
+      });
+    });
+
+    renderChart();
+
+    // 模式切换
+    var traces = [
+      [
+        '1. 本机密钥装载：读取本地沙盒 .p8 私钥，生成 ES256 JWT (exp=1200s)',
+        '2. 官方接口直连：请求 api.appstoreconnect.apple.com 流式解压 GZIP TSV 报表',
+        '3. 口径校准渲染：分离 Type 1/1F 首次下载与 IA1/IAY 内购，剔除 Type 7 更新干扰',
+        'GET /v1/salesReports', '1.9ms'
+      ],
+      [
+        '1. 评论拉取：请求 GET /v1/apps/{id}/customerReviews 按创建时间倒序排列',
+        '2. 视觉减负：详情页默认仅展示最新 1 条用户评论，其余自动折叠',
+        '3. 官方回复直发：调用 POST /v1/customerReviewResponses 实时回写开发者回复',
+        'POST /v1/customerReviewResponses', '2.3ms'
+      ],
+      [
+        '1. 状态轮询：聚合 /v1/apps/{id}/appStoreVersions 与 /v1/builds 构建状态',
+        '2. 待发布识别：检测到 iOS v1.3.0 处于 PENDING_DEVELOPER_RELEASE 状态',
+        '3. 一键上架：触发 POST /v1/appStoreVersionReleaseRequests 立即推向全球商店',
+        'POST /v1/appStoreVersionReleaseRequests', '1.6ms'
+      ]
+    ];
+
+    document.querySelectorAll('[data-tab]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = parseInt(btn.getAttribute('data-tab'), 10);
+        document.querySelectorAll('[data-tab]').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        document.querySelectorAll('.sim-pane').forEach(function (p, i) {
+          p.classList.toggle('active', i === idx);
+        });
+        var t = traces[idx];
+        document.getElementById('traceStep1').textContent = t[0];
+        document.getElementById('traceStep2').textContent = t[1];
+        document.getElementById('traceStep3').textContent = t[2];
+        document.getElementById('pgEndpointBadge').textContent = t[3];
+        document.getElementById('telEndpoint').textContent = t[3];
+        document.getElementById('telLatency').textContent = t[4];
+      });
+    });
+
+    // 模式 B 快捷回复与发送
+    var replyInput = document.getElementById('simReplyInput');
+    var replyText = document.getElementById('simReplyText');
+    var replyTime = document.getElementById('simReplyTime');
+    document.querySelectorAll('[data-tpl]').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        replyInput.value = chip.getAttribute('data-tpl');
+      });
+    });
+    var sendBtn = document.getElementById('simSendReplyBtn');
+    if (sendBtn) {
+      sendBtn.addEventListener('click', function () {
+        if (!replyInput.value.trim()) return;
+        replyText.textContent = replyInput.value.trim();
+        replyTime.textContent = '已通过 POST /v1/customerReviewResponses 更新 · 刚刚';
+      });
+    }
+
+    // 模式 C 一键发布上架
+    var relBtn = document.getElementById('simReleaseBtn');
+    var verBadge = document.getElementById('simVerBadge');
+    var verSub = document.getElementById('simVerSub');
+    if (relBtn) {
+      relBtn.addEventListener('click', function () {
+        verBadge.className = 'status-badge live';
+        verBadge.textContent = '✅ 已上架 App Store (READY_FOR_SALE)';
+        verSub.textContent = '已通过 POST /v1/appStoreVersionReleaseRequests 触发正式发布！';
+        relBtn.textContent = '✓ 已发布上架';
+      });
+    }
+  })();
+
+  // 5. 实机截图灯箱
+  (function () {
+    var lb = document.getElementById('lb');
+    var lbImg = document.getElementById('lbImg');
+    var lbCap = document.getElementById('lbCap');
+    var lbClose = document.getElementById('lbClose');
+    if (!lb) return;
+    document.querySelectorAll('[data-shot]').forEach(function (card) {
+      card.addEventListener('click', function () {
+        lbImg.src = card.getAttribute('data-shot');
+        lbCap.textContent = card.getAttribute('data-cap') || '';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+      });
+    });
+    function closeLb() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+    }
+    lbClose.addEventListener('click', closeLb);
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+    window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+  })();
+</script>
 </body>
 </html>

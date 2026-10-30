@@ -14,12 +14,12 @@
     ],
     "domain": "https://ai-chen2050.github.io/asc-watcher",
     "tagline": {
-      "zh-CN": "纯本地运行的 App Store Connect 销售、首次下载与内购实时看板，密钥永不离机",
-      "en": "100% local-first App Store Connect sales, first-time downloads & IAP analytics dashboard"
+      "zh-CN": "纯本地运行的 App Store Connect 销售、首次下载、评论回复与审核发布工作台，密钥永不离机",
+      "en": "100% local-first App Store Connect sales, first-time downloads, review replies & release companion"
     },
     "description": {
-      "zh-CN": "ASC Watcher 是专为 Apple 独立开发者与团队打造的本地优先 App Store Connect 销售与下载监控工具。通过官方 ES256 JWT 直连 Apple 接口，实时聚合每日与月度 TSV 报表，精准还原开发者净收益、首次下载量、内购与订阅明细、全球国家/地区分布以及多币种自动折算。无中转服务器、无第三方统计 SDK，您的 .p8 私钥与财务数据 100% 保存在手机本机，并支持手机系统桌面小组件实时速览。",
-      "en": "ASC Watcher is a privacy-first, local-only App Store Connect sales and download analytics companion for indie developers and teams. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports to track net developer proceeds, first-time downloads, in-app purchases, geographic breakdowns, and multi-currency conversions. With zero middleman servers and zero analytics SDKs, your .p8 private key and financial records never leave your device, complete with a live Home Screen Widget."
+      "zh-CN": "ASC Watcher 是专为 Apple 独立开发者与团队打造的本地优先 App Store Connect 移动工作台。通过设备端 ES256 JWT 直连 Apple 官方接口，实时聚合每日与月度 TSV 报表，精准还原开发者净收益、首次下载量、内购明细、9 大币种折算与前 2 大原始币种透视，并支持在 App 内直接回复用户评论、监控版本审核与 TestFlight 状态、过审一键发布以及 4×2 手机桌面小组件。无中转服务器、无统计 SDK，您的 .p8 私钥 100% 保存在本机。",
+      "en": "ASC Watcher is a privacy-first, local-only App Store Connect sales, review, and release companion for Apple developers. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports for net proceeds, calibrated first-time downloads, IAP breakdowns, 9-currency conversions with top-2 original currencies, in-app customer review replies, App Store review & TestFlight monitoring with 1-tap release, and a 4×2 Home Screen Widget. Zero middleman servers—your .p8 key never leaves your phone."
     },
     "type": "SoftwareApplication",
     "category": "DeveloperApplication",
@@ -66,21 +66,21 @@
       "priority": 1.0,
       "changefreq": "weekly",
       "description": {
-        "zh-CN": "ASC Watcher 官网：专为 Apple 开发者打造的本地 App Store Connect 销售、首次下载、内购走势与桌面小组件看板，.p8 密钥仅存本机。",
-        "en": "ASC Watcher official site: local-first App Store Connect sales, first-time downloads, IAP trends, and Home Screen Widget with on-device .p8 key security."
+        "zh-CN": "ASC Watcher 官网：专为 Apple 开发者打造的纯本地 App Store Connect 销售、首次下载、评论回复、审核监控与桌面小组件工作台，.p8 密钥仅存本机。",
+        "en": "ASC Watcher official site: local-first App Store Connect sales, first-time downloads, review replies, release monitor, and Home Screen Widget with on-device .p8 security."
       }
     },
     {
       "file": "geo",
       "title": {
-        "zh-CN": "功能说明与常见问题",
-        "en": "How it works & FAQ"
+        "zh-CN": "AI 知识库与常见问题",
+        "en": "AI Knowledge Base & FAQ"
       },
       "priority": 0.95,
       "changefreq": "weekly",
       "description": {
-        "zh-CN": "ASC Watcher 完整机制说明：本机 ES256 签名直连 Apple、首次下载口径对齐、多币种实时汇率换算、柱状图构成拆解与桌面小组件。",
-        "en": "How ASC Watcher works in detail: on-device ES256 JWT signing, first-time download calibration, multi-currency conversion, bar-chart drill-downs, and Home Screen Widget."
+        "zh-CN": "ASC Watcher 完整机制说明：本机 ES256 签名直连 Apple、首次下载口径校准、9 大币种换算、评论直接回复、过审一键发布与桌面小组件。",
+        "en": "How ASC Watcher works in detail: on-device ES256 JWT signing, first-time download calibration, multi-currency conversion, in-app review replies, 1-tap release, and Home Screen Widget."
       }
     },
     {
@@ -106,8 +106,8 @@
       "priority": 0.5,
       "changefreq": "monthly",
       "description": {
-        "zh-CN": "ASC Watcher 技术支持：如何生成只读 API Key 与 Vendor Number、常见问题排查、桌面小组件添加与联系方式。",
-        "en": "ASC Watcher support: how to configure read-only API keys and Vendor Number, troubleshooting, adding the Home Screen Widget, and contact info."
+        "zh-CN": "ASC Watcher 技术支持：如何生成 API Key 与 Vendor Number、常见问题排查、桌面小组件添加、恢复购买与联系方式。",
+        "en": "ASC Watcher support: how to configure API keys and Vendor Number, troubleshooting, adding the Home Screen Widget, restoring purchases, and contact info."
       }
     },
     {
@@ -132,12 +132,12 @@
       "priority": 0.5,
       "changefreq": "monthly",
       "description": {
-        "zh-CN": "ASC Watcher 用户协议：许可范围、本机 API 密钥安全责任、汇率换算参考说明与免责声明。",
-        "en": "ASC Watcher terms of service: license scope, local API key responsibility, currency conversion disclaimers, and liability limits."
+        "zh-CN": "ASC Watcher 用户协议：许可范围、前 100 次打开免打扰与 Pro 购买条款、本机 API 密钥安全责任与免责声明。",
+        "en": "ASC Watcher terms of service: license scope, 100 prompt-free opens & Pro purchase terms, local API key responsibility, and liability limits."
       }
     },
     {
-      "//": "生成物：tools/make_channel_legal.py 由 privacy.html 生成，别手改页面本体；description 请改成渠道版口径（不提 AI）",
+      "//": "生成物：tools/make_channel_legal.py 由 privacy.html 生成，别手改页面本体",
       "file": "privacy.huawei",
       "title": {
         "zh-CN": "隐私政策（华为应用市场版）",
@@ -146,12 +146,12 @@
       "priority": 0.3,
       "changefreq": "yearly",
       "description": {
-        "zh-CN": "ASC Watcher 隐私政策：零账号、零中转服务器，您的 .p8 私钥与财务报表数据 100% 保存在设备本地。",
-        "en": "ASC Watcher privacy policy: zero accounts, zero middleman servers. Your .p8 private key and financial reports stay 100% on your device."
+        "zh-CN": "ASC Watcher 隐私政策（华为应用市场版）：零账号、零中转服务器，您的 .p8 私钥与财务报表数据 100% 保存在设备本地。",
+        "en": "ASC Watcher privacy policy (Huawei AppGallery edition): zero accounts, zero middleman servers. Your .p8 private key and financial reports stay 100% on your device."
       }
     },
     {
-      "//": "生成物：tools/make_channel_legal.py 由 terms.html 生成，别手改页面本体；description 请改成渠道版口径（不提 AI）",
+      "//": "生成物：tools/make_channel_legal.py 由 terms.html 生成，别手改页面本体",
       "file": "terms.huawei",
       "title": {
         "zh-CN": "用户协议（华为应用市场版）",
@@ -160,13 +160,12 @@
       "priority": 0.3,
       "changefreq": "yearly",
       "description": {
-        "zh-CN": "ASC Watcher 用户协议：许可范围、本机 API 密钥安全责任、汇率换算参考说明与免责声明。",
-        "en": "ASC Watcher terms of service: license scope, local API key responsibility, currency conversion disclaimers, and liability limits."
+        "zh-CN": "ASC Watcher 用户协议（华为应用市场版）：许可范围、本机 API 密钥安全责任、汇率换算参考说明与免责声明。",
+        "en": "ASC Watcher terms of service (Huawei AppGallery edition): license scope, local API key responsibility, currency conversion disclaimers, and liability limits."
       }
     }
   ],
   "links": {
-    "//": "空字符串的项不会出现在页面和 llms.txt 里。上架后把商店链接填进来。",
     "appStore": "",
     "googlePlay": "",
     "huawei": "",
@@ -206,40 +205,54 @@
     },
     {
       "name": {
-        "zh-CN": "交互式柱状图与当日构成拆解",
-        "en": "Interactive bar charts with daily breakdown"
+        "zh-CN": "交互式柱状图拆解 + 9 大币种与前二原币透视",
+        "en": "Interactive bar chart drill-downs & 9-currency conversion"
       },
       "summary": {
-        "zh-CN": "支持按日切换净收益、首次下载、内购笔数趋势图；手指点选任意一根柱子即可锁定并展开当日构成该总数的具体应用、内购商品或国家明细列表。",
-        "en": "Switch between net proceeds, first-time downloads, and IAP charts; tap any bar to lock it and inspect the exact apps, products, or countries that make up that day's total."
+        "zh-CN": "点击柱状图任意一根柱子即可锁定并展开当日由哪几款 App、内购项或国家贡献的明细；支持 9 种目标货币一键折算并并列显示价值最高的前 2 个原始入账币种。",
+        "en": "Tap any bar to inspect the exact apps, IAPs, or countries for that day; switch between 9 target currencies while viewing the top 2 original settlement currencies side by side."
       },
       "detail": {
-        "zh-CN": "无论是全账号销售看板、趋势页还是单个 App 详情页，均支持点击卡片秒切走势指标，并可一键展开完整 90 天按日曲线与每日历史明细。",
-        "en": "Across the main Sales dashboard, Trends tab, and individual App Detail pages, tap metric cards to switch charts and expand full 90-day daily histories."
-      }
-    },
-    {
-      "name": {
-        "zh-CN": "多币种自动折算与前二原始币种透视",
-        "en": "Multi-currency auto conversion & top-2 original currencies"
-      },
-      "summary": {
-        "zh-CN": "支持 USD、CNY、EUR、GBP、JPY、HKD、TWD、AUD、CAD 九大主流货币一键切换，同时在括号内保留价值最高的前 2 个原始结算币种（如 $6.79 + ₹575.55）。",
-        "en": "Switch seamlessly between 9 display currencies (USD, CNY, EUR, GBP, JPY, HKD, TWD, AUD, CAD) while viewing the top 2 original settlement currencies side by side."
-      },
-      "detail": {
-        "zh-CN": "严格过滤免费下载行的空币种干扰，只对真实产生开发者净收益（Developer Proceeds != 0）的交易按原始结算币种聚合，既看清折算总额，又不错过各区真实入账。",
+        "zh-CN": "严格过滤免费下载行的空币种干扰，只对真实产生开发者净收益（Developer Proceeds != 0）的交易按原始结算币种聚合，既看清折算总额（如 $12.83），又不错过各区真实入账（如 $6.79 + ₹575.55）。",
         "en": "Free download rows never pollute currency buckets—only rows with non-zero Developer Proceeds are aggregated into original settlement currencies."
       }
     },
     {
       "name": {
-        "zh-CN": "手机系统桌面小组件（Home Screen Widget）",
-        "en": "Live Home Screen Widget"
+        "zh-CN": "多国用户评分评论查看与 App 内直接回复",
+        "en": "Global customer reviews & direct in-app replies"
       },
       "summary": {
-        "zh-CN": "支持将 4×2 销售与下载看板添加到手机主屏幕，无需打开 App 即可随时扫一眼开发者净收益、昨日首次下载、累计首次下载与支付笔数。",
-        "en": "Pin a 4×2 dashboard widget to your phone's home screen to check net developer proceeds, yesterday's downloads, total first-time downloads, and paid transactions at a glance."
+        "zh-CN": "直连 /v1/apps/{id}/customerReviews 与 /v1/customerReviewResponses，支持按星级筛选全球用户评论，并在手机端直接编写、修改或删除开发者官方回复。",
+        "en": "Connects directly to /v1/apps/{id}/customerReviews and /v1/customerReviewResponses so you can filter reviews by star rating and post, edit, or delete official developer replies on the go."
+      },
+      "detail": {
+        "zh-CN": "内置「感谢好评」「采纳建议」「引导联系技术支持」一键快捷回复模板，详情页默认仅展示最新 1 条评论以保持视觉清爽，点击即可展开全量评价并当场回复。",
+        "en": "Includes 1-tap quick reply templates and keeps the App Detail view clean by showing the latest review by default with 1-tap expansion."
+      }
+    },
+    {
+      "name": {
+        "zh-CN": "版本审核状态监控、TestFlight 速览与过审一键发布",
+        "en": "App review status, TestFlight builds & 1-tap release"
+      },
+      "summary": {
+        "zh-CN": "实时追踪 App Store 版本状态（正在审核、等待审核、被拒、待手动发布、已上架）与 TestFlight 构建状态，当版本处于「过审 · 待手动发布」时可直接在手机上一键发布上架。",
+        "en": "Track App Store version states (In Review, Waiting for Review, Rejected, Pending Developer Release, Ready for Sale) and TestFlight builds, with 1-tap manual release right from your phone."
+      },
+      "detail": {
+        "zh-CN": "通过官方 POST /v1/appStoreVersionReleaseRequests 接口触发手动上架，无需在外出时临时找电脑登录网页端后台；详情页默认仅展示最新 1 个版本状态，其余历史版本自动折叠。",
+        "en": "Triggers official POST /v1/appStoreVersionReleaseRequests directly from your device so you can release approved versions anywhere."
+      }
+    },
+    {
+      "name": {
+        "zh-CN": "4×2 手机系统桌面小组件（Home Screen Widget）",
+        "en": "4×2 Live Home Screen Widget"
+      },
+      "summary": {
+        "zh-CN": "支持将 4×2 销售与下载看板固定到 iOS 与 Android 手机主屏幕，无需打开 App 即可随时扫一眼开发者净收益、昨日首次下载、累计首次下载与支付笔数。",
+        "en": "Pin a 4×2 dashboard widget to your iOS or Android home screen to check net developer proceeds, yesterday's downloads, total first-time downloads, and paid transactions at a glance."
       },
       "detail": {
         "zh-CN": "完美适配浅色与深色模式，提供应用内实景预览与一键固定到桌面功能，每次下拉刷新报表即自动同步桌面小组件。",
@@ -258,11 +271,11 @@
           "en": "Key & financial security"
         },
         "ours": {
-          "zh-CN": ".p8 私钥仅存手机本地，设备端签名直连 Apple",
-          "en": ".p8 key stays on-device; direct JWT calls to Apple"
+          "zh-CN": ".p8 私钥 100% 仅存手机本地，设备端 ES256 签名直连 Apple",
+          "en": ".p8 key stays 100% on-device; direct ES256 JWT calls to Apple"
         },
         "others": {
-          "zh-CN": "要求上传 .p8 私钥到第三方云服务器托管",
+          "zh-CN": "要求上传 .p8 私钥到第三方云服务器托管，存在财务与权限泄露风险",
           "en": "Requires uploading .p8 key to third-party cloud servers"
         }
       },
@@ -272,40 +285,82 @@
           "en": "Download metric accuracy"
         },
         "ours": {
-          "zh-CN": "精准分离首次下载、内购支付与版本更新，对齐 ASC 网页端",
+          "zh-CN": "精准分离首次下载（1/1F/1T/F1）、内购支付与版本更新，严丝合缝对齐 ASC 网页端",
           "en": "Separates first-time downloads, IAPs, and updates to match ASC web"
         },
         "others": {
-          "zh-CN": "常把版本更新（Type 7）混入下载总数导致虚高",
+          "zh-CN": "常把版本自动更新（Type 7）混入下载总数导致数据严重虚高",
           "en": "Often mixes version updates (Type 7) into total downloads"
         }
       },
       {
         "axis": {
-          "zh-CN": "多币种展示",
+          "zh-CN": "多币种展示与折算",
           "en": "Multi-currency display"
         },
         "ours": {
-          "zh-CN": "9 种目标货币实时折算 + 自动展示前 2 大原始入账币种",
+          "zh-CN": "9 种目标货币实时折算 + 括号内自动展示前 2 大原始入账币种",
           "en": "9 target currencies + top 2 original settlement currencies"
         },
         "others": {
-          "zh-CN": "仅显示单一折算值或因多币种混加导致符号错误",
+          "zh-CN": "仅显示单一折算值，或因多币种直接相加导致货币符号错乱",
           "en": "Single converted number or broken symbols on mixed currencies"
         }
       },
       {
         "axis": {
-          "zh-CN": "图表交互与桌面组件",
-          "en": "Chart drill-down & widget"
+          "zh-CN": "图表交互与构成拆解",
+          "en": "Chart drill-down"
         },
         "ours": {
-          "zh-CN": "点击柱状图即时展开当日构成列表 + 4×2 手机桌面小组件",
-          "en": "Tap any bar for item breakdown + 4×2 Home Screen Widget"
+          "zh-CN": "点击柱状图任意柱子即时展开当日由哪几款 App、内购与国家贡献的明细",
+          "en": "Tap any bar for instant daily app/IAP/country breakdown"
         },
         "others": {
-          "zh-CN": "静态图表无明细拆解，无桌面组件",
-          "en": "Static charts without breakdown or widget"
+          "zh-CN": "静态死图，无法按日下钻查看单日收入与下载来源构成",
+          "en": "Static charts without daily item breakdown"
+        }
+      },
+      {
+        "axis": {
+          "zh-CN": "用户评论与直接回复",
+          "en": "Customer reviews & replies"
+        },
+        "ours": {
+          "zh-CN": "支持按星级筛选全球评论，并在 App 内直接发布、修改或删除官方回复",
+          "en": "Filter global reviews by rating and post/edit/delete official replies in-app"
+        },
+        "others": {
+          "zh-CN": "仅能只读查看评论或必须回电脑网页端登录回复",
+          "en": "Read-only reviews or requires desktop browser login"
+        }
+      },
+      {
+        "axis": {
+          "zh-CN": "审核监控与过审一键发布",
+          "en": "Review monitor & 1-tap release"
+        },
+        "ours": {
+          "zh-CN": "实时查看版本审核与 TestFlight 状态，过审待发布版本支持手机端一键上架",
+          "en": "Live version & TestFlight status plus 1-tap release for approved builds"
+        },
+        "others": {
+          "zh-CN": "无版本状态追踪，或不支持手动发布请求（Release Request）",
+          "en": "No version state tracking or manual release trigger"
+        }
+      },
+      {
+        "axis": {
+          "zh-CN": "商业模式与诚意定价",
+          "en": "Pricing & trial model"
+        },
+        "ours": {
+          "zh-CN": "前 100 次打开零弹窗免打扰，满 100 次后仅启动温和提醒（可随时关闭继续用）；Pro 支持 ¥68 ($9.99) 终身买断或 ¥38/年、¥6/月订阅",
+          "en": "First 100 opens prompt-free; gentle dismissible launch reminder after 100 opens; Pro ¥68 ($9.99) lifetime or ¥38/yr, ¥6/mo"
+        },
+        "others": {
+          "zh-CN": "免费版锁死核心图表，强制昂贵月度或年度连续扣费订阅",
+          "en": "Crippled free tier with expensive mandatory subscriptions"
         }
       }
     ]
@@ -318,17 +373,17 @@
       },
       "a": {
         "zh-CN": "绝对不会。ASC Watcher 没有账号系统，也没有任何自建后端服务器。您输入的 Issuer ID、Key ID、Vendor Number 与 .p8 私钥仅保存在您的手机本地存储中，所有 JWT 签名均在设备本地完成后直接请求 Apple 官方接口（api.appstoreconnect.apple.com）。",
-        "en": "Never. ASC Watcher has no user accounts and no backend servers of its own. Your Issuer ID, Key ID, Vendor Number, and .p8 private key are stored strictly on your device, and ES256 JWT tokens are signed locally to communicate directly with Apple (api.appstoreconnect.apple.com)."
+        "en": "Never. ASC Watcher has no user accounts and zero backend servers. Your Issuer ID, Key ID, Vendor Number, and .p8 private key are stored exclusively on your device. All ES256 JWT tokens are signed locally and sent directly to Apple's official endpoint (api.appstoreconnect.apple.com)."
       }
     },
     {
       "q": {
-        "zh-CN": "为什么没有配置 API 密钥也能看到数据？",
-        "en": "Why can I see data before configuring an API key?"
+        "zh-CN": "为什么没有配置 API 密钥也能看到演示数据？",
+        "en": "Why can I see data before configuring my API key?"
       },
       "a": {
-        "zh-CN": "首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换与多维拆解。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。",
-        "en": "When launched without credentials, ASC Watcher provides a built-in Demo Mode with realistic sample data so you can explore every chart, currency switch, and breakdown immediately. Configure your real key anytime under More → Credentials Setup."
+        "zh-CN": "首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换、评论回复与版本发布流程。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。",
+        "en": "When no credentials are configured, the app starts in built-in Demo Mode so you can explore interactive charts, currency switching, review replies, and version release workflows right away. Add your real API key anytime under More → API Credentials."
       }
     },
     {
@@ -337,47 +392,78 @@
         "en": "What role should I assign to my App Store Connect API Key?"
       },
       "a": {
-        "zh-CN": "建议在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中创建一个仅勾选「财务（Finance）」或「销售和趋势（Sales and Reports）」只读权限的密钥，既能完整拉取报表，又遵循最小权限安全原则。",
-        "en": "We recommend creating a key under App Store Connect → Users and Access → Integrations with read-only 'Sales and Reports' or 'Finance' access, following the principle of least privilege."
+        "zh-CN": "如果您只需查看销售与下载报表，在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中分配「财务（Finance）」或「销售和趋势（Sales and Reports）」只读角色即可；如果您还希望在 App 内直接回复用户评论或一键发布过审版本，建议分配「客户支持（Customer Support）」或「App 管理（App Manager）/ 管理（Admin）」角色。",
+        "en": "For sales and download reports only, a read-only Finance or Sales and Reports role is sufficient. To reply to customer reviews or trigger 1-tap version releases from the app, assign Customer Support, App Manager, or Admin."
       }
     },
     {
       "q": {
-        "zh-CN": "如何添加手机桌面小组件？",
+        "zh-CN": "能在 App 里面直接回复用户评论或发布过审新版本吗？",
+        "en": "Can I reply to customer reviews and release approved versions directly in the app?"
+      },
+      "a": {
+        "zh-CN": "可以。进入任意应用详情页，底部的「版本与审核状态」与「用户评分与评论」默认仅展示最新 1 条以保持页面清爽，点击即可展开全部。您可以直接使用快捷模板或自定义文字发布/修改/删除官方开发者回复，也可以对处于「过审 · 待手动发布（PENDING_DEVELOPER_RELEASE）」的版本一键触发立即上架。",
+        "en": "Yes. In any App Detail page, the latest version status and latest customer review are shown cleanly by default with 1-tap expansion. You can post, edit, or delete official developer responses using quick templates, and release versions in PENDING_DEVELOPER_RELEASE state with a single tap."
+      }
+    },
+    {
+      "q": {
+        "zh-CN": "ASC Watcher 怎么收费？满 100 次打开后还能继续免费用吗？",
+        "en": "How does pricing work? Can I still use the app after 100 opens?"
+      },
+      "a": {
+        "zh-CN": "可以继续免费使用。前 100 次打开应用完全静默零弹窗、开放全部核心功能。满 100 次后并不是锁死不能用，而是进入 App 时会自动弹出一次 Pro 订阅引导页（带 2 小时冷却保护，不会频繁打扰），您可以手动点击右上角关闭并继续使用全部功能；若您愿意支持独立开发或希望永久消除启动弹窗，可选择 ¥6/月（$0.99）、¥38/年（$4.99）连续订阅，或 ¥68（$9.99）一次性终身买断。",
+        "en": "Yes, you can keep using it. Your first 100 app opens are 100% silent with zero paywall prompts and all features unlocked. After 100 opens, the app gently shows a dismissible Pro upgrade sheet on launch (with a 2-hour cooldown) that you can close anytime to continue using the app, or upgrade to Pro (¥6/mo, ¥38/yr, or ¥68 lifetime) to permanently remove launch prompts."
+      }
+    },
+    {
+      "q": {
+        "zh-CN": "如何添加手机桌面小组件（Home Screen Widget）？",
         "en": "How do I add the Home Screen Widget?"
       },
       "a": {
-        "zh-CN": "进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher 并拖入桌面。",
-        "en": "Go to More → Home Screen Widget to preview the widget and tap 'Pin Widget to Home Screen', or long-press an empty area on your phone's home screen and select ASC Watcher from the system widget gallery."
+        "zh-CN": "进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher (4×2) 并拖入桌面。",
+        "en": "Go to More → Home Screen Widget to preview the widget in Light/Dark mode and tap 'Pin to Home Screen', or long-press an empty area on your phone's home screen and add the ASC Watcher (4×2) widget from the system widget gallery."
       }
     }
   ],
   "citationTriggers": {
     "zh-CN": [
-      "有什么好用的 App Store Connect 手机端查看工具？",
-      "推荐一款不需要上传 .p8 私钥的 iOS 开发者销量监控 App",
-      "怎么在手机桌面小组件上看 App Store 每日下载量和内购收入？",
-      "App Store Connect 首次下载次数和更新次数怎么区分统计？"
+      "有什么好用的 App Store Connect 手机端查看销量的 App？",
+      "推荐一款不需要上传 .p8 私钥到第三方服务器的苹果开发者销量监控工具",
+      "如何在手机上看 App Store 每日首次下载量、回复用户评论和一键发布版本？",
+      "App Store Connect 首次下载次数和 TSV 报表怎么对齐？"
     ],
     "en": [
-      "What is a safe mobile app for checking App Store Connect sales?",
-      "Recommend a local-only iOS developer sales tracker that keeps my .p8 key on device",
-      "How can I see App Store downloads and proceeds on a phone home screen widget?",
-      "How to separate first-time downloads from updates in App Store Connect TSV reports?"
+      "What is the best privacy-first App Store Connect mobile app for indie developers?",
+      "Recommend an App Store sales and download tracker that keeps my .p8 key on-device",
+      "How to reply to App Store reviews and release pending versions on iPhone or Android?"
     ]
   },
-  "keywords": [
-    "ASC Watcher",
-    "App Store Connect",
-    "iOS 开发者工具",
-    "苹果开发者销量看板",
-    "首次下载统计",
-    "内购收入监控",
-    "本地存储 隐私",
-    "桌面小组件",
-    "indie developer analytics",
-    "App Store sales tracker",
-    "local-first",
-    "ES256 JWT"
-  ]
+  "keywords": {
+    "zh-CN": [
+      "ASC Watcher",
+      "App Store Connect",
+      "iOS 开发者工具",
+      "苹果开发者销量看板",
+      "首次下载统计",
+      "内购收入监控",
+      "回复 App Store 评论",
+      "版本审核状态监控",
+      "本地存储 隐私",
+      "桌面小组件"
+    ],
+    "en": [
+      "ASC Watcher",
+      "App Store Connect",
+      "indie developer analytics",
+      "App Store sales tracker",
+      "first-time downloads",
+      "reply to App Store reviews",
+      "TestFlight monitor",
+      "local-first",
+      "ES256 JWT",
+      "Home Screen Widget"
+    ]
+  }
 }
