@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<!-- GEO:AUTO START -->
+<title>ASC Watcher · 纯本地运行的 App Store Connect 销售、首次下载与内购实时看板，密钥永不离机</title>
+<meta name="description" content="ASC Watcher 官网：专为 Apple 开发者打造的本地 App Store Connect 销售、首次下载、内购走势与桌面小组件看板，.p8 密钥仅存本机。">
+<meta name="keywords" content="ASC Watcher, App Store Connect, iOS 开发者工具, 苹果开发者销量看板, 首次下载统计, 内购收入监控, 本地存储 隐私, 桌面小组件, indie developer analytics, App Store sales tracker, local-first, ES256 JWT">
+<link rel="canonical" href="https://ai-chen2050.github.io/asc-watcher/index.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-chen2050.github.io/asc-watcher/index.html">
+<link rel="alternate" hreflang="en" href="https://ai-chen2050.github.io/asc-watcher/index.en.html">
+<link rel="alternate" hreflang="x-default" href="https://ai-chen2050.github.io/asc-watcher/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ASC Watcher · 纯本地运行的 App Store Connect 销售、首次下载与内购实时看板，密钥永不离机">
+<meta property="og:description" content="ASC Watcher 官网：专为 Apple 开发者打造的本地 App Store Connect 销售、首次下载、内购走势与桌面小组件看板，.p8 密钥仅存本机。">
+<meta property="og:url" content="https://ai-chen2050.github.io/asc-watcher/index.html">
+<meta property="og:image" content="https://ai-chen2050.github.io/asc-watcher/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3B82F6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ai-chen2050.github.io/asc-watcher/#product",
+      "name": "ASC Watcher",
+      "description": "ASC Watcher 是专为 Apple 独立开发者与团队打造的本地优先 App Store Connect 销售与下载监控工具。通过官方 ES256 JWT 直连 Apple 接口，实时聚合每日与月度 TSV 报表，精准还原开发者净收益、首次下载量、内购与订阅明细、全球国家/地区分布以及多币种自动折算。无中转服务器、无第三方统计 SDK，您的 .p8 私钥与财务数据 100% 保存在手机本机，并支持手机系统桌面小组件实时速览。",
+      "url": "https://ai-chen2050.github.io/asc-watcher/",
+      "alternateName": [
+        "asc-watcher",
+        "ASC Watcher App",
+        "ASC 开发者看板",
+        "App Store Connect 销量监控"
+      ],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "ASC Watcher",
+        "email": "blake.chen94@gmail.com"
+      },
+      "featureList": [
+        "本机 ES256 签名直连 Apple 官方接口",
+        "精准对齐 ASC 后台的首次下载与内购统计",
+        "交互式柱状图与当日构成拆解",
+        "多币种自动折算与前二原始币种透视",
+        "手机系统桌面小组件（Home Screen Widget）"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ai-chen2050.github.io/asc-watcher/index.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ASC Watcher 会把我的 .p8 私钥或销售数据上传到你们的服务器吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "绝对不会。ASC Watcher 没有账号系统，也没有任何自建后端服务器。您输入的 Issuer ID、Key ID、Vendor Number 与 .p8 私钥仅保存在您的手机本地存储中，所有 JWT 签名均在设备本地完成后直接请求 Apple 官方接口（api.appstoreconnect.apple.com）。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "为什么没有配置 API 密钥也能看到数据？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换与多维拆解。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "应该给 API Key 分配什么权限角色？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "建议在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中创建一个仅勾选「财务（Finance）」或「销售和趋势（Sales and Reports）」只读权限的密钥，既能完整拉取报表，又遵循最小权限安全原则。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何添加手机桌面小组件？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher 并拖入桌面。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQNQNPK1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1CQNQNPK1Y');
+</script>
+<script>
+  window._hmt = window._hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b3a7b6fedcba22d39897693d6f716035";
+    hm.async = true;
+    var s = document.getElementsByTagName("script")[0];
+    if (s && s.parentNode) s.parentNode.insertBefore(hm, s);
+    else document.head.appendChild(hm);
+  })();
+</script>
+<script>
+  (function(){
+    var lastPath = location.pathname + location.search + location.hash;
+    function trackPageView(){
+      var curPath = location.pathname + location.search + location.hash;
+      if (curPath === lastPath) return;
+      lastPath = curPath;
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'page_view', {
+          page_path: curPath,
+          page_location: location.href,
+          page_title: document.title
+        });
+      }
+      if (Array.isArray(window._hmt)) {
+        window._hmt.push(['_trackPageview', curPath]);
+      }
+    }
+    var origPush = history.pushState;
+    if (origPush) {
+      history.pushState = function(){
+        var ret = origPush.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    var origReplace = history.replaceState;
+    if (origReplace) {
+      history.replaceState = function(){
+        var ret = origReplace.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    window.addEventListener('popstate', trackPageView);
+    window.addEventListener('hashchange', trackPageView);
+  })();
+</script>
+<!-- GEO:AUTO END -->
+</head>
+<body>
+
+<nav>
+  <div class="wrap" style="display:flex;align-items:center;gap:20px;height:64px">
+    <a class="brand" href="index.html" style="display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none">
+      <img src="icon.png" alt="ASC Watcher" width="32" height="32" style="border-radius:8px">
+      <span>ASC Watcher</span>
+    </a>
+    <span style="flex:1"></span>
+    <a href="#features">核心特性</a>
+    <a href="geo.html">机制与问答</a>
+    <a href="devlog.html">开发日记</a>
+    <a href="support.html">技术支持</a>
+    <a href="index.en.html">English</a>
+  </div>
+</nav>
+
+<main class="wrap prose">
+  <section style="padding:40px 0 24px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px">
+      <img src="icon.png" alt="ASC Watcher Icon" width="76" height="76" style="border-radius:18px;box-shadow:0 10px 28px rgba(59,130,246,0.25)">
+      <div>
+        <p class="kicker" style="margin:0 0 4px">LOCAL-FIRST APP STORE CONNECT COMPANION</p>
+        <h1 style="margin:0">ASC Watcher</h1>
+      </div>
+    </div>
+    <p class="lead" style="font-size:1.18rem;line-height:1.65">
+      纯本地运行的 App Store Connect 销售、首次下载与内购实时监控看板。<br>
+      无需注册账号、无任何中转服务器，您的 <code>.p8</code> 私钥与财务数据 100% 保存在手机本机，设备端 ES256 签名直连 Apple 官方接口。
+    </p>
+    <p style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
+      <a href="geo.html" style="display:inline-block;padding:10px 18px;background:#3B82F6;color:#fff;border-radius:10px;text-decoration:none;font-weight:600">了解技术机制</a>
+      <a href="support.html" style="display:inline-block;padding:10px 18px;border:1px solid rgba(128,128,128,0.3);border-radius:10px;text-decoration:none;font-weight:600">API 密钥配置指南</a>
+    </p>
+  </section>
+
+  <h2 id="features">为什么选择 ASC Watcher</h2>
+  <ul>
+    <li><strong>本机 ES256 签名直连 Apple 官方接口</strong>：您的 Issuer ID、Key ID、Vendor Number 与 <code>.p8</code> 私钥仅保存在手机本地，绝不上传任何第三方云服务器。</li>
+    <li><strong>首次下载与内购精准分离</strong>：严格区分首次下载（Product Type <code>1 / 1F / 1T / F1</code>）、内购订阅（<code>IA1 / IA9 / IAY</code>）与版本自动更新（<code>7 / 7F / 7T</code>），与 App Store Connect 网页端「首次下载次数」口径严丝合缝。</li>
+    <li><strong>柱状图点选构成拆解</strong>：支持切换净收益、首次下载、支付内购历史走势，点击任意一根柱子即可当场展开当天是由哪几个 App、内购项或国家贡献的明细列表。</li>
+    <li><strong>9 大币种实时折算 + 前 2 大原始币种透视</strong>：支持 USD、CNY、EUR、GBP、JPY、HKD、TWD、AUD、CAD 一键切换，并在括号内自动展示占比最高的前 2 个原始入账币种（如 <code>($6.79 + ₹575.55)</code>）。</li>
+    <li><strong>4×2 手机系统桌面小组件（Home Screen Widget）</strong>：将实时净收益、昨日首次下载、累计首次下载与支付笔数固定在手机桌面，下拉刷新自动同步。</li>
+  </ul>
+
+  <h2>与传统第三方统计工具对比</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>对比维度</th><th>ASC Watcher</th><th>传统云端托管统计工具</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>私钥与财务安全</td><td><code>.p8</code> 私钥仅存手机本地，设备端签名直连 Apple</td><td>要求上传 <code>.p8</code> 私钥到第三方服务器托管</td></tr>
+        <tr><td>下载量统计口径</td><td>精准分离首次下载、内购支付与版本更新，对齐 ASC 网页端</td><td>常将版本更新（Type 7）混入总下载数导致虚高</td></tr>
+        <tr><td>多币种展示</td><td>9 种目标货币实时折算 + 自动展示前 2 大原始入账币种</td><td>仅显示单一折算值或因多币种混加导致符号错误</td></tr>
+        <tr><td>图表交互与桌面组件</td><td>点击柱状图即时展开当日构成列表 + 4×2 手机桌面小组件</td><td>静态图表无明细拆解，无桌面小组件</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>常见问题</h2>
+  <h3>ASC Watcher 会把我的 .p8 私钥或销售数据上传到你们的服务器吗？</h3>
+  <p>绝对不会。ASC Watcher 没有账号系统，也没有任何自建后端服务器。您输入的 Issuer ID、Key ID、Vendor Number 与 <code>.p8</code> 私钥仅保存在您的手机本地存储中，所有 JWT 签名均在设备本地完成后直接请求 Apple 官方接口（<code>api.appstoreconnect.apple.com</code>）。</p>
+
+  <h3>为什么没有配置 API 密钥也能看到数据？</h3>
+  <p>首次打开且未配置凭据时，应用默认提供内置的「演示模式（Demo Mode）」示例数据，方便您直观体验全部图表交互、币种切换与多维拆解。您随时可以在「更多 → API 凭据配置」中填入真实密钥切换为实时数据。</p>
+
+  <h3>应该给 API Key 分配什么权限角色？</h3>
+  <p>建议在 App Store Connect「用户和访问 → 集成 → App Store Connect API」中创建一个仅勾选「财务（Finance）」或「销售和趋势（Sales and Reports）」只读权限的密钥，既能完整拉取报表，又遵循最小权限安全原则。</p>
+
+  <h3>如何添加手机桌面小组件？</h3>
+  <p>进入「更多 → 手机桌面小组件」，可先预览深色/浅色实景效果并点击「一键添加到手机桌面」；也可以长按手机主屏幕空白处，在系统「小组件 / 窗口小工具」列表中找到 ASC Watcher 并拖入桌面。</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 ASC Watcher · <a href="geo.html">机制与问答</a> · <a href="devlog.html">开发日记</a> · <a href="support.html">技术支持</a> · <a href="privacy.html">隐私政策</a> · <a href="terms.html">用户协议</a></p>
+  </div>
+</footer>
+</body>
+</html>

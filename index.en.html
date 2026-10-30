@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<!-- GEO:AUTO START -->
+<title>ASC Watcher · 100% local-first App Store Connect sales, first-time downloads & IAP analytics dashboard</title>
+<meta name="description" content="ASC Watcher official site: local-first App Store Connect sales, first-time downloads, IAP trends, and Home Screen Widget with on-device .p8 key security.">
+<meta name="keywords" content="ASC Watcher, App Store Connect, iOS 开发者工具, 苹果开发者销量看板, 首次下载统计, 内购收入监控, 本地存储 隐私, 桌面小组件, indie developer analytics, App Store sales tracker, local-first, ES256 JWT">
+<link rel="canonical" href="https://ai-chen2050.github.io/asc-watcher/index.en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-chen2050.github.io/asc-watcher/index.html">
+<link rel="alternate" hreflang="en" href="https://ai-chen2050.github.io/asc-watcher/index.en.html">
+<link rel="alternate" hreflang="x-default" href="https://ai-chen2050.github.io/asc-watcher/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ASC Watcher · 100% local-first App Store Connect sales, first-time downloads & IAP analytics dashboard">
+<meta property="og:description" content="ASC Watcher official site: local-first App Store Connect sales, first-time downloads, IAP trends, and Home Screen Widget with on-device .p8 key security.">
+<meta property="og:url" content="https://ai-chen2050.github.io/asc-watcher/index.en.html">
+<meta property="og:image" content="https://ai-chen2050.github.io/asc-watcher/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3B82F6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ai-chen2050.github.io/asc-watcher/#product",
+      "name": "ASC Watcher",
+      "description": "ASC Watcher is a privacy-first, local-only App Store Connect sales and download analytics companion for indie developers and teams. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports to track net developer proceeds, first-time downloads, in-app purchases, geographic breakdowns, and multi-currency conversions. With zero middleman servers and zero analytics SDKs, your .p8 private key and financial records never leave your device, complete with a live Home Screen Widget.",
+      "url": "https://ai-chen2050.github.io/asc-watcher/",
+      "alternateName": [
+        "asc-watcher",
+        "ASC Watcher App",
+        "ASC 开发者看板",
+        "App Store Connect 销量监控"
+      ],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "ASC Watcher",
+        "email": "blake.chen94@gmail.com"
+      },
+      "featureList": [
+        "On-device ES256 JWT direct to Apple API",
+        "Calibrated first-time downloads & IAP metrics",
+        "Interactive bar charts with daily breakdown",
+        "Multi-currency auto conversion & top-2 original currencies",
+        "Live Home Screen Widget"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ai-chen2050.github.io/asc-watcher/index.en.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does ASC Watcher upload my .p8 private key or sales data to your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Never. ASC Watcher has no user accounts and no backend servers of its own. Your Issuer ID, Key ID, Vendor Number, and .p8 private key are stored strictly on your device, and ES256 JWT tokens are signed locally to communicate directly with Apple (api.appstoreconnect.apple.com)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can I see data before configuring an API key?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When launched without credentials, ASC Watcher provides a built-in Demo Mode with realistic sample data so you can explore every chart, currency switch, and breakdown immediately. Configure your real key anytime under More → Credentials Setup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What role should I assign to my App Store Connect API Key?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend creating a key under App Store Connect → Users and Access → Integrations with read-only 'Sales and Reports' or 'Finance' access, following the principle of least privilege."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I add the Home Screen Widget?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Go to More → Home Screen Widget to preview the widget and tap 'Pin Widget to Home Screen', or long-press an empty area on your phone's home screen and select ASC Watcher from the system widget gallery."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQNQNPK1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1CQNQNPK1Y');
+</script>
+<script>
+  window._hmt = window._hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b3a7b6fedcba22d39897693d6f716035";
+    hm.async = true;
+    var s = document.getElementsByTagName("script")[0];
+    if (s && s.parentNode) s.parentNode.insertBefore(hm, s);
+    else document.head.appendChild(hm);
+  })();
+</script>
+<script>
+  (function(){
+    var lastPath = location.pathname + location.search + location.hash;
+    function trackPageView(){
+      var curPath = location.pathname + location.search + location.hash;
+      if (curPath === lastPath) return;
+      lastPath = curPath;
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'page_view', {
+          page_path: curPath,
+          page_location: location.href,
+          page_title: document.title
+        });
+      }
+      if (Array.isArray(window._hmt)) {
+        window._hmt.push(['_trackPageview', curPath]);
+      }
+    }
+    var origPush = history.pushState;
+    if (origPush) {
+      history.pushState = function(){
+        var ret = origPush.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    var origReplace = history.replaceState;
+    if (origReplace) {
+      history.replaceState = function(){
+        var ret = origReplace.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    window.addEventListener('popstate', trackPageView);
+    window.addEventListener('hashchange', trackPageView);
+  })();
+</script>
+<!-- GEO:AUTO END -->
+</head>
+<body>
+
+<nav>
+  <div class="wrap" style="display:flex;align-items:center;gap:20px;height:64px">
+    <a class="brand" href="index.en.html" style="display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none">
+      <img src="icon.png" alt="ASC Watcher" width="32" height="32" style="border-radius:8px">
+      <span>ASC Watcher</span>
+    </a>
+    <span style="flex:1"></span>
+    <a href="#features">Features</a>
+    <a href="geo.en.html">How It Works</a>
+    <a href="devlog.html">Devlog</a>
+    <a href="support.en.html">Support</a>
+    <a href="index.html">中文</a>
+  </div>
+</nav>
+
+<main class="wrap prose">
+  <section style="padding:40px 0 24px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px">
+      <img src="icon.png" alt="ASC Watcher Icon" width="76" height="76" style="border-radius:18px;box-shadow:0 10px 28px rgba(59,130,246,0.25)">
+      <div>
+        <p class="kicker" style="margin:0 0 4px">LOCAL-FIRST APP STORE CONNECT COMPANION</p>
+        <h1 style="margin:0">ASC Watcher</h1>
+      </div>
+    </div>
+    <p class="lead" style="font-size:1.18rem;line-height:1.65">
+      100% local-first App Store Connect sales, first-time downloads &amp; In-App Purchase analytics dashboard.<br>
+      No accounts, no middleman servers: your <code>.p8</code> private key and financial reports stay strictly on your phone with on-device ES256 JWT signing direct to Apple.
+    </p>
+    <p style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
+      <a href="geo.en.html" style="display:inline-block;padding:10px 18px;background:#3B82F6;color:#fff;border-radius:10px;text-decoration:none;font-weight:600">How It Works &amp; FAQ</a>
+      <a href="support.en.html" style="display:inline-block;padding:10px 18px;border:1px solid rgba(128,128,128,0.3);border-radius:10px;text-decoration:none;font-weight:600">API Key Setup Guide</a>
+    </p>
+  </section>
+
+  <h2 id="features">Key Highlights</h2>
+  <ul>
+    <li><strong>On-Device ES256 JWT Direct to Apple</strong>: Your Issuer ID, Key ID, Vendor Number, and <code>.p8</code> private key never leave your device.</li>
+    <li><strong>Calibrated First-Time Downloads &amp; IAP Metrics</strong>: Strictly separates first-time downloads (<code>1 / 1F / 1T / F1</code>) from In-App Purchases (<code>IA1 / IA9 / IAY</code>) and auto-updates (<code>7 / 7F / 7T</code>) to match App Store Connect web.</li>
+    <li><strong>Interactive Bar Charts with Daily Breakdown</strong>: Tap any bar on a chart to lock it and inspect the exact apps, products, or countries that make up that day's total.</li>
+    <li><strong>Multi-Currency Conversion &amp; Top-2 Original Currencies</strong>: Switch between 9 display currencies (USD, CNY, EUR, GBP, JPY, HKD, TWD, AUD, CAD) while viewing the top 2 original settlement currencies side by side (e.g., <code>($6.79 + ₹575.55)</code>).</li>
+    <li><strong>4×2 Live Home Screen Widget</strong>: Check net developer proceeds, yesterday's downloads, total first-time downloads, and paid transactions right from your phone's home screen.</li>
+  </ul>
+
+  <h2>Comparison</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Dimension</th><th>ASC Watcher</th><th>Cloud-Hosted Trackers</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Key &amp; financial security</td><td><code>.p8</code> key stays on-device; direct JWT calls to Apple</td><td>Requires uploading <code>.p8</code> key to third-party cloud servers</td></tr>
+        <tr><td>Download metric accuracy</td><td>Separates first-time downloads, IAPs, and updates to match ASC web</td><td>Often mixes version updates (Type 7) into total downloads</td></tr>
+        <tr><td>Multi-currency display</td><td>9 target currencies + top 2 original settlement currencies</td><td>Single converted number or broken symbols on mixed currencies</td></tr>
+        <tr><td>Chart drill-down &amp; widget</td><td>Tap any bar for item breakdown + 4×2 Home Screen Widget</td><td>Static charts without breakdown or widget</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>FAQ</h2>
+  <h3>Does ASC Watcher upload my .p8 private key or sales data to your servers?</h3>
+  <p>Never. ASC Watcher has no user accounts and no backend servers of its own. Your Issuer ID, Key ID, Vendor Number, and <code>.p8</code> private key are stored strictly on your device, and ES256 JWT tokens are signed locally to communicate directly with Apple (<code>api.appstoreconnect.apple.com</code>).</p>
+
+  <h3>Why can I see data before configuring an API key?</h3>
+  <p>When launched without credentials, ASC Watcher provides a built-in Demo Mode with realistic sample data so you can explore every chart, currency switch, and breakdown immediately. Configure your real key anytime under More → Credentials Setup.</p>
+
+  <h3>What role should I assign to my App Store Connect API Key?</h3>
+  <p>We recommend creating a key under App Store Connect → Users and Access → Integrations with read-only "Sales and Reports" or "Finance" access, following the principle of least privilege.</p>
+
+  <h3>How do I add the Home Screen Widget?</h3>
+  <p>Go to More → Home Screen Widget to preview the widget and tap "Pin Widget to Home Screen", or long-press an empty area on your phone's home screen and select ASC Watcher from the system widget gallery.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 ASC Watcher · <a href="geo.en.html">How It Works</a> · <a href="devlog.html">Devlog</a> · <a href="support.en.html">Support</a> · <a href="privacy.en.html">Privacy</a> · <a href="terms.en.html">Terms</a></p>
+  </div>
+</footer>
+</body>
+</html>

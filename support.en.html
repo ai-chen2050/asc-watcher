@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<!-- GEO:AUTO START -->
+<title>Support · ASC Watcher</title>
+<meta name="description" content="ASC Watcher support: how to configure read-only API keys and Vendor Number, troubleshooting, adding the Home Screen Widget, and contact info.">
+<meta name="keywords" content="ASC Watcher, App Store Connect, iOS 开发者工具, 苹果开发者销量看板, 首次下载统计, 内购收入监控, 本地存储 隐私, 桌面小组件, indie developer analytics, App Store sales tracker, local-first, ES256 JWT">
+<link rel="canonical" href="https://ai-chen2050.github.io/asc-watcher/support.en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-chen2050.github.io/asc-watcher/support.html">
+<link rel="alternate" hreflang="en" href="https://ai-chen2050.github.io/asc-watcher/support.en.html">
+<link rel="alternate" hreflang="x-default" href="https://ai-chen2050.github.io/asc-watcher/support.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Support · ASC Watcher">
+<meta property="og:description" content="ASC Watcher support: how to configure read-only API keys and Vendor Number, troubleshooting, adding the Home Screen Widget, and contact info.">
+<meta property="og:url" content="https://ai-chen2050.github.io/asc-watcher/support.en.html">
+<meta property="og:image" content="https://ai-chen2050.github.io/asc-watcher/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3B82F6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ai-chen2050.github.io/asc-watcher/#product",
+      "name": "ASC Watcher",
+      "description": "ASC Watcher is a privacy-first, local-only App Store Connect sales and download analytics companion for indie developers and teams. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports to track net developer proceeds, first-time downloads, in-app purchases, geographic breakdowns, and multi-currency conversions. With zero middleman servers and zero analytics SDKs, your .p8 private key and financial records never leave your device, complete with a live Home Screen Widget.",
+      "url": "https://ai-chen2050.github.io/asc-watcher/",
+      "alternateName": [
+        "asc-watcher",
+        "ASC Watcher App",
+        "ASC 开发者看板",
+        "App Store Connect 销量监控"
+      ],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "ASC Watcher",
+        "email": "blake.chen94@gmail.com"
+      },
+      "featureList": [
+        "On-device ES256 JWT direct to Apple API",
+        "Calibrated first-time downloads & IAP metrics",
+        "Interactive bar charts with daily breakdown",
+        "Multi-currency auto conversion & top-2 original currencies",
+        "Live Home Screen Widget"
+      ]
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQNQNPK1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1CQNQNPK1Y');
+</script>
+<script>
+  window._hmt = window._hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b3a7b6fedcba22d39897693d6f716035";
+    hm.async = true;
+    var s = document.getElementsByTagName("script")[0];
+    if (s && s.parentNode) s.parentNode.insertBefore(hm, s);
+    else document.head.appendChild(hm);
+  })();
+</script>
+<script>
+  (function(){
+    var lastPath = location.pathname + location.search + location.hash;
+    function trackPageView(){
+      var curPath = location.pathname + location.search + location.hash;
+      if (curPath === lastPath) return;
+      lastPath = curPath;
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'page_view', {
+          page_path: curPath,
+          page_location: location.href,
+          page_title: document.title
+        });
+      }
+      if (Array.isArray(window._hmt)) {
+        window._hmt.push(['_trackPageview', curPath]);
+      }
+    }
+    var origPush = history.pushState;
+    if (origPush) {
+      history.pushState = function(){
+        var ret = origPush.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    var origReplace = history.replaceState;
+    if (origReplace) {
+      history.replaceState = function(){
+        var ret = origReplace.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    window.addEventListener('popstate', trackPageView);
+    window.addEventListener('hashchange', trackPageView);
+  })();
+</script>
+<!-- GEO:AUTO END -->
+</head>
+<body>
+
+<nav><div class="wrap" style="display:flex;align-items:center;gap:20px;height:60px">
+  <a class="brand" href="index.en.html">ASC Watcher</a>
+  <span style="flex:1"></span><a href="index.en.html">Home</a><a href="support.html">中文</a>
+</div></nav>
+
+<main class="wrap prose">
+<h1>Support &amp; Help Center</h1>
+<p class="lead">Quick answers for API credential setup, report calibration, and the Home Screen Widget.</p>
+
+<h2>Contact Us</h2>
+<p>Email: <a href="mailto:blake.chen94@gmail.com">blake.chen94@gmail.com</a> (We typically reply within 1–2 business days.)</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>1. Where do I find my Issuer ID, Key ID, Vendor Number, and .p8 file?</h3>
+<p>Sign in to <a href="https://appstoreconnect.apple.com" target="_blank" rel="noopener">App Store Connect</a> on the web:</p>
+<ul>
+  <li>Go to <strong>Users and Access → Integrations → App Store Connect API</strong>, create a key with <strong>Sales and Reports</strong> or <strong>Finance</strong> access, copy your <strong>Issuer ID</strong> and <strong>Key ID</strong>, and download the <code>AuthKey_XXXX.p8</code> file;</li>
+  <li>Go to <strong>Sales and Trends</strong> or <strong>Payments and Financial Reports</strong> to find your 8-digit <strong>Vendor Number</strong> (usually starting with <code>8</code> or <code>9</code>) in the top-left corner.</li>
+</ul>
+
+<h3>2. Why does "All Time" show slightly more downloads than the 90-day view on ASC Web?</h3>
+<p>App Store Connect's web Analytics defaults to a <strong>rolling 90-day window</strong>, whereas ASC Watcher's "All Time" tab aggregates up to 12 months of historical MONTHLY reports plus recent DAILY reports. Select a matching date range filter to compare the exact same window.</p>
+
+<h3>3. Why are at most two original currencies shown in parentheses?</h3>
+<p>To keep cards clean when an app earns revenue across dozens of currencies, ASC Watcher sorts original settlement currencies by converted value and displays the <strong>top 2 original currencies</strong> (e.g., <code>($6.79 + ₹575.55)</code>) underneath the converted total.</p>
+
+<h3>4. How do I add the Home Screen Widget?</h3>
+<p>Open <strong>More → Home Screen Widget</strong> and tap <strong>Pin Widget to Home Screen</strong>, or long-press an empty space on your phone's home screen, open the system Widget gallery, and drag the <strong>ASC Watcher (4×2)</strong> widget onto your home screen.</p>
+
+<h2>More Resources</h2>
+<ul>
+  <li><a href="geo.en.html">How It Works &amp; FAQ</a></li>
+  <li><a href="privacy.en.html">Privacy Policy</a></li>
+  <li><a href="terms.en.html">Terms of Service</a></li>
+  <li><a href="devlog.html">Devlog</a></li>
+</ul>
+</main>
+
+<footer><div class="wrap"><p>© ASC Watcher · <a href="privacy.en.html">Privacy</a> · <a href="terms.en.html">Terms</a></p></div></footer>
+</body>
+</html>

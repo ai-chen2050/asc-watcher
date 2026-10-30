@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<!-- GEO:AUTO START -->
+<title>Terms of Service · ASC Watcher</title>
+<meta name="description" content="ASC Watcher terms of service: license scope, local API key responsibility, currency conversion disclaimers, and liability limits.">
+<meta name="keywords" content="ASC Watcher, App Store Connect, iOS 开发者工具, 苹果开发者销量看板, 首次下载统计, 内购收入监控, 本地存储 隐私, 桌面小组件, indie developer analytics, App Store sales tracker, local-first, ES256 JWT">
+<link rel="canonical" href="https://ai-chen2050.github.io/asc-watcher/terms.en.html">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-chen2050.github.io/asc-watcher/terms.html">
+<link rel="alternate" hreflang="en" href="https://ai-chen2050.github.io/asc-watcher/terms.en.html">
+<link rel="alternate" hreflang="x-default" href="https://ai-chen2050.github.io/asc-watcher/terms.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Terms of Service · ASC Watcher">
+<meta property="og:description" content="ASC Watcher terms of service: license scope, local API key responsibility, currency conversion disclaimers, and liability limits.">
+<meta property="og:url" content="https://ai-chen2050.github.io/asc-watcher/terms.en.html">
+<meta property="og:image" content="https://ai-chen2050.github.io/asc-watcher/icon.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3B82F6">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://ai-chen2050.github.io/asc-watcher/#product",
+      "name": "ASC Watcher",
+      "description": "ASC Watcher is a privacy-first, local-only App Store Connect sales and download analytics companion for indie developers and teams. Connecting directly to Apple's official API via on-device ES256 JWT signing, it aggregates daily and monthly TSV reports to track net developer proceeds, first-time downloads, in-app purchases, geographic breakdowns, and multi-currency conversions. With zero middleman servers and zero analytics SDKs, your .p8 private key and financial records never leave your device, complete with a live Home Screen Widget.",
+      "url": "https://ai-chen2050.github.io/asc-watcher/",
+      "alternateName": [
+        "asc-watcher",
+        "ASC Watcher App",
+        "ASC 开发者看板",
+        "App Store Connect 销量监控"
+      ],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "ASC Watcher",
+        "email": "blake.chen94@gmail.com"
+      },
+      "featureList": [
+        "On-device ES256 JWT direct to Apple API",
+        "Calibrated first-time downloads & IAP metrics",
+        "Interactive bar charts with daily breakdown",
+        "Multi-currency auto conversion & top-2 original currencies",
+        "Live Home Screen Widget"
+      ]
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQNQNPK1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1CQNQNPK1Y');
+</script>
+<script>
+  window._hmt = window._hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b3a7b6fedcba22d39897693d6f716035";
+    hm.async = true;
+    var s = document.getElementsByTagName("script")[0];
+    if (s && s.parentNode) s.parentNode.insertBefore(hm, s);
+    else document.head.appendChild(hm);
+  })();
+</script>
+<script>
+  (function(){
+    var lastPath = location.pathname + location.search + location.hash;
+    function trackPageView(){
+      var curPath = location.pathname + location.search + location.hash;
+      if (curPath === lastPath) return;
+      lastPath = curPath;
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'page_view', {
+          page_path: curPath,
+          page_location: location.href,
+          page_title: document.title
+        });
+      }
+      if (Array.isArray(window._hmt)) {
+        window._hmt.push(['_trackPageview', curPath]);
+      }
+    }
+    var origPush = history.pushState;
+    if (origPush) {
+      history.pushState = function(){
+        var ret = origPush.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    var origReplace = history.replaceState;
+    if (origReplace) {
+      history.replaceState = function(){
+        var ret = origReplace.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    window.addEventListener('popstate', trackPageView);
+    window.addEventListener('hashchange', trackPageView);
+  })();
+</script>
+<!-- GEO:AUTO END -->
+</head>
+<body>
+
+<nav><div class="wrap" style="display:flex;align-items:center;gap:20px;height:60px">
+  <a class="brand" href="index.en.html">ASC Watcher</a>
+  <span style="flex:1"></span><a href="index.en.html">Home</a><a href="privacy.en.html">Privacy</a><a href="terms.html">中文</a>
+</div></nav>
+
+<main class="wrap prose">
+<h1>Terms of Service</h1>
+<p class="lead updated">Effective Date: 2026-10-30 · Applies to ASC Watcher for iOS &amp; Android</p>
+
+<p>By downloading or using ASC Watcher, you agree to these Terms of Service. "We" refers to the developer of ASC Watcher, and "you" refers to the user.</p>
+
+<h2>1. License Scope</h2>
+<p>We grant you a personal, non-transferable, non-exclusive license to install and use ASC Watcher on devices you own or control for viewing and analyzing App Store Connect reports you are authorized to access. You may not reverse-engineer, modify, or use the app for unlawful purposes.</p>
+
+<h2>2. API Credentials &amp; On-Device Security</h2>
+<p>ASC Watcher operates entirely on-device without user accounts or cloud servers. Your Issuer ID, Key ID, Vendor Number, and <code>.p8</code> private key are stored strictly on your device. You are responsible for safeguarding your device and we strongly recommend assigning read-only "Sales and Reports" or "Finance" roles to your API key in App Store Connect. See our <a href="privacy.en.html">Privacy Policy</a> for details.</p>
+
+<h2>3. Purchases &amp; Subscriptions</h2>
+<ul>
+  <li>ASC Watcher includes a built-in Demo Mode and core analytics features. Where Pro unlocks (lifetime one-time purchase or auto-renewable subscriptions) are offered, pricing and terms are displayed on the in-app purchase screen and processed directly by the respective app store (Apple App Store, Google Play, or Huawei AppGallery).</li>
+</ul>
+
+<!-- AI-ONLY -->
+<h2>4. Optional External API Keys</h2>
+<p>If you configure optional external service keys in supported builds, any usage and billing are governed directly between you and that provider.</p>
+<!-- /AI-ONLY -->
+
+<h2>5. Disclaimers on Report Figures &amp; Exchange Rates</h2>
+<p>ASC Watcher is provided "AS IS" as a companion reporting tool:</p>
+<ul>
+  <li>All download counts, in-app purchase units, and Developer Proceeds are parsed directly from Apple's official DAILY and MONTHLY TSV reports. Because Apple's backend applies timezone cutoffs, rolling-window recalculations, and monthly settlement adjustments, official Apple Financial Reports and bank payouts remain the sole authoritative financial record;</li>
+  <li>Multi-currency conversions use public reference exchange rates for estimation only and do not represent Apple's final settlement rates;</li>
+  <li>ASC Watcher is an independent developer tool and is not affiliated with, endorsed by, or sponsored by Apple Inc. "App Store Connect" is a trademark of Apple Inc.</li>
+</ul>
+<p>To the maximum extent permitted by law, we shall not be liable for any indirect or consequential damages arising from report delays, exchange rate fluctuations, or API changes.</p>
+
+<h2>6. Changes &amp; Termination</h2>
+<p>We may update the app as Apple's API evolves. You may stop using the app at any time by disconnecting your credentials or uninstalling the application.</p>
+
+<h2>7. Governing Law</h2>
+<p>These terms are governed by the laws of the developer's jurisdiction, without prejudice to mandatory consumer protection rights in your jurisdiction.</p>
+
+<h2>8. Contact</h2>
+<p>For questions or feedback, contact <a href="mailto:blake.chen94@gmail.com">blake.chen94@gmail.com</a>.</p>
+</main>
+
+<footer><div class="wrap"><p>© ASC Watcher · <a href="privacy.en.html">Privacy</a> · <a href="support.en.html">Support</a></p></div></footer>
+</body>
+</html>

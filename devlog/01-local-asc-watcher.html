@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../icon.png">
+<title>为什么做 ASC Watcher：零服务器直连与下载口径校准 · ASC Watcher</title>
+<meta name="description" content="独立开发者每天最关心的就是旗下几款 App 昨天进了多少新用户、产生了多少笔内购。我们做了一款无需把 .p8 私钥交给任何第三方云端、100% 在手机本地签名直连 Apple 的随身看板。">
+<link rel="canonical" href="https://ai-chen2050.github.io/asc-watcher/devlog/01-local-asc-watcher.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么做 ASC Watcher：零服务器直连与下载口径校准">
+<meta property="og:description" content="独立开发者每天最关心的就是旗下几款 App 昨天进了多少新用户、产生了多少笔内购。我们做了一款无需把 .p8 私钥交给任何第三方云端、100% 在手机本地签名直连 Apple 的随身看板。">
+<meta property="og:url" content="https://ai-chen2050.github.io/asc-watcher/devlog/01-local-asc-watcher.html">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "为什么做 ASC Watcher：零服务器直连与下载口径校准",
+  "description": "独立开发者每天最关心的就是旗下几款 App 昨天进了多少新用户、产生了多少笔内购。我们做了一款无需把 .p8 私钥交给任何第三方云端、100% 在手机本地签名直连 Apple 的随身看板。",
+  "url": "https://ai-chen2050.github.io/asc-watcher/devlog/01-local-asc-watcher.html",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ASC Watcher"
+  },
+  "datePublished": "2026-10-30",
+  "keywords": "架构, 隐私, App Store Connect, 独立开发"
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQNQNPK1Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1CQNQNPK1Y');
+</script>
+<script>
+  window._hmt = window._hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b3a7b6fedcba22d39897693d6f716035";
+    hm.async = true;
+    var s = document.getElementsByTagName("script")[0];
+    if (s && s.parentNode) s.parentNode.insertBefore(hm, s);
+    else document.head.appendChild(hm);
+  })();
+</script>
+<script>
+  (function(){
+    var lastPath = location.pathname + location.search + location.hash;
+    function trackPageView(){
+      var curPath = location.pathname + location.search + location.hash;
+      if (curPath === lastPath) return;
+      lastPath = curPath;
+      if (typeof window.gtag === "function") {
+        window.gtag('event', 'page_view', {
+          page_path: curPath,
+          page_location: location.href,
+          page_title: document.title
+        });
+      }
+      if (Array.isArray(window._hmt)) {
+        window._hmt.push(['_trackPageview', curPath]);
+      }
+    }
+    var origPush = history.pushState;
+    if (origPush) {
+      history.pushState = function(){
+        var ret = origPush.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    var origReplace = history.replaceState;
+    if (origReplace) {
+      history.replaceState = function(){
+        var ret = origReplace.apply(this, arguments);
+        trackPageView();
+        return ret;
+      };
+    }
+    window.addEventListener('popstate', trackPageView);
+    window.addEventListener('hashchange', trackPageView);
+  })();
+</script>
+</head>
+<body>
+<nav class="wrap"><a class="brand" href="../index.html">ASC Watcher</a>
+  <a href="../devlog.html">开发日记</a></nav>
+<main class="wrap prose">
+<p class="kicker">开发日记 · 2026-10-30</p><h1>为什么做 ASC Watcher：零服务器直连与下载口径校准</h1><p class="lead">独立开发者每天最关心的就是旗下几款 App 昨天进了多少新用户、产生了多少笔内购。我们做了一款无需把 .p8 私钥交给任何第三方云端、100% 在手机本地签名直连 Apple 的随身看板。</p><h2 id="结论先说">结论先说</h2>
+<p>ASC Watcher 没有账号系统，也没有中转服务器。你的 <code>.p8</code> 私钥、Issuer ID、Key ID 和 Vendor Number 只存在你自己的手机里，每次下拉刷新都在本地完成 ES256 JWT 签名，直接请求 <code>api.appstoreconnect.apple.com</code>。</p>
+<h2 id="解决了什么痛点">解决了什么痛点</h2>
+<ol><li><strong>私钥安全</strong>：很多第三方统计平台要求上传 <code>.p8</code> 密钥到他们的服务器定时拉取。其实手机端完全有能力自己完成 ECDSA P-256 签名与 GZIP TSV 流式解压。</li><li><strong>首次下载与更新不混算</strong>：原始 TSV 报表里 <code>Product Type Identifier = 7 / 7F</code> 是老用户自动更新，如果直接把所有正数 <code>Units</code> 相加，算出来的下载量会比 App Store Connect 网页端虚高几倍。ASC Watcher 严格只把 <code>1 / 1F / 1T / F1</code> 计入首次下载，<code>IA1 / IA9 / IAY</code> 计入内购与订阅。</li><li><strong>多币种折算与原始入账兼顾</strong>：支持 9 种目标货币实时换算，同时在括号里保留折算价值最高的前 2 个原始结算币种（如 <code>($6.79 + ₹575.55)</code>），既看清总额又不丢细节。</li><li><strong>柱状图点选拆解 + 手机桌面小组件</strong>：点选柱状图任意一天即可列出当天是由哪几个 App、哪几个国家或内购商品构成的；加上 4×2 手机桌面小组件，解锁手机就能一眼看到最新收益与昨日下载。</li></ol><p class="pager"></p><p><a href="../devlog.html">← 全部开发日记</a></p>
+</main>
+<footer class="wrap"><p>© ASC Watcher</p></footer>
+</body>
+</html>
