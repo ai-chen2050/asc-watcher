@@ -2,6 +2,9 @@
 
 ## 2026-10-30
 
+- **修复浏览器旧版 `style.css` 缓存导致样式错位并新增 iPhone Duo 双屏截图展示 (`style.css`, `index.html`, `index.en.html`, `en/*.html`, `tools/build_devlog.py`)**：
+  - **原因**：首次部署后升级企业级 `style.css` 时，`<link rel="stylesheet" href="style.css">` 未带版本哈希参数，导致浏览器直接复用首次缓存的旧版暖米色样式表（缺失 `.appstore-btn` 等新类名，使得 Apple SVG 图标失去尺寸约束放大）；
+  - **修复**：全站所有 HTML 页面及生成脚本统一加上缓存穿透版本号 `style.css?v=20261030v3`，为 `<svg>` 补齐原生 `width="22" height="22"` 属性兜底，在 `style.css` 中同时兼容 `.appstore-btn` / `.store-btn` / `.hide-sm` / `.updated` / `.pager`（全站 20 个 HTML 页面 CSS 类覆盖率 100%），并在 `#shots` 实机画廊中新增第 07 幕 **iPhone Duo 折叠双屏工作台** 海报。
 - 使用 `/Users/blake/Agy/Code/app-ai-creator` 企业级「Playground-First」官网脚手架全面升级站点视觉与交互：
   - 升级 `style.css` 为科技蓝 (`#3b82f6`) + 赛博青 (`#06b6d4`) + 翡翠绿 (`#10b981`) 明暗双生设计系统；
   - 重构 `index.html` 与 `index.en.html`：新增 `#heroCanvas` 动态粒子星网、发光旋转 App 徽章、首屏双舞台实机预览、3 模式可交互演练舱（`#playground`：柱状图单日构成点选拆解、用户评论直接回复模拟、过审版本一键发布 + 实时端侧遥测与白盒执行链）、实机真容截图灯箱画廊（`#shots`）、7 维对比矩阵（`#compare`）、100 次免弹窗 + Pro 透明定价矩阵（`#pricing`）与 FAQ 手风琴（`#faq`）；

@@ -269,7 +269,7 @@ def shell(lang, title, desc, canonical, body, extra_ld=None):
 <meta property="og:title" content="{_html.escape(title)}">
 <meta property="og:description" content="{_html.escape(desc)}">
 <meta property="og:url" content="{canonical}">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css?v=20261030v3">
 <script type="application/ld+json">
 {json.dumps(ld, ensure_ascii=False, indent=2)}
 </script>{build_ga4()}
