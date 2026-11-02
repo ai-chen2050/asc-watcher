@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="style.css?v=20261030v3">
+<link rel="stylesheet" href="style.css?v=20261102v1">
 
 <!-- 下面这一段由 tools/gen_geo.py 从 site.config.json 生成，勿手改 -->
 <!-- GEO:AUTO START -->
@@ -192,6 +192,7 @@
       <span class="brand-badge">LOCAL-FIRST</span>
     </a>
     <span class="nav-links">
+      <a href="#video">宣传片</a>
       <a href="#features">核心能力</a>
       <a href="#playground">交互演练舱</a>
       <a href="#shots">实机真容</a>
@@ -226,6 +227,9 @@
       <a class="appstore-btn" href="https://apps.apple.com/app/id6828810863" target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
         <span class="t"><small>Download on the</small><b>App Store 免费下载</b></span>
+      </a>
+      <a class="appstore-btn alt" href="#video" id="heroWatchBtn">
+        <span class="t"><small>78 秒实机演示</small><b>🎬 观看官方宣传片</b></span>
       </a>
       <a class="appstore-btn alt" href="#playground">
         <span class="t"><small>免安装在线互动</small><b>先试玩交互演练舱 →</b></span>
@@ -345,6 +349,43 @@
     </div>
   </div>
 </header>
+
+<!-- 官方产品宣传片 (#video) -->
+<section id="video" class="promo-video-sec">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:32px;">
+      <span class="sec-kicker">Official Product Film · 1080p</span>
+      <h2 class="sec-title">78 秒看懂 ASC Watcher 全链路移动工作台</h2>
+      <p class="sec-sub">首次下载与多币种净收益校准、iPhone Duo 双屏联动、一键过审发布、全球评论秒回、AI 增长军师与本机钥匙串安全</p>
+    </div>
+    <div class="video-stage">
+      <div class="video-bar">
+        <span class="pg-dots"><span></span><span></span><span></span></span>
+        <span>ASC Watcher · 苹果开发者随身工作台 官方实机宣传片</span>
+        <span class="video-badge-row">
+          <span class="video-pill-tag">🎵 Tech House · 极客律动</span>
+          <span class="video-pill-tag">HD 1080P</span>
+        </span>
+      </div>
+      <div class="video-frame">
+        <video id="promoVideo" class="promo-video-player" controls preload="metadata" playsinline poster="cover.png">
+          <source src="promo.mp4" type="video/mp4">
+          您的浏览器不支持 HTML5 视频播放，请直接下载观看。
+        </video>
+      </div>
+      <div class="video-chapters" aria-label="宣传片章节快跳">
+        <button class="chapter-pill active" type="button" data-seek="0"><time>00:00</time><span>销售与趋势校准</span></button>
+        <button class="chapter-pill" type="button" data-seek="10"><time>00:10</time><span>iPhone Duo 双屏工作台</span></button>
+        <button class="chapter-pill" type="button" data-seek="20"><time>00:20</time><span>一键过审发布与里程碑</span></button>
+        <button class="chapter-pill" type="button" data-seek="30"><time>00:30</time><span>全球评论秒级回复</span></button>
+        <button class="chapter-pill" type="button" data-seek="40"><time>00:40</time><span>全球地域与90天曲线</span></button>
+        <button class="chapter-pill" type="button" data-seek="50"><time>00:50</time><span>AI 增长军师与 TG 闭环</span></button>
+        <button class="chapter-pill" type="button" data-seek="60"><time>01:00</time><span>本机密钥与桌面小组件</span></button>
+        <button class="chapter-pill" type="button" data-seek="70"><time>01:10</time><span>品牌终章</span></button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- 核心能力 -->
 <section id="features">
@@ -1051,6 +1092,55 @@
     lbClose.addEventListener('click', closeLb);
     lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
     window.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+  })();
+
+  // 6. 官方实机宣传片章节快跳与联动控制 (#promoVideo)
+  (function () {
+    var vid = document.getElementById('promoVideo');
+    var pills = document.querySelectorAll('.chapter-pill[data-seek]');
+    var watchBtn = document.getElementById('heroWatchBtn');
+    if (!vid) return;
+
+    var times = [];
+    pills.forEach(function (btn, idx) {
+      var t = parseFloat(btn.getAttribute('data-seek')) || 0;
+      times.push({ btn: btn, t: t, idx: idx });
+      btn.addEventListener('click', function () {
+        pills.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        try {
+          vid.currentTime = t;
+          var p = vid.play();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        } catch (e) {}
+      });
+    });
+
+    vid.addEventListener('timeupdate', function () {
+      var cur = vid.currentTime || 0;
+      var activeIdx = 0;
+      for (var i = 0; i < times.length; i++) {
+        if (cur >= times[i].t - 0.25) activeIdx = i;
+      }
+      times.forEach(function (item, idx) {
+        item.btn.classList.toggle('active', idx === activeIdx);
+      });
+    });
+
+    if (watchBtn) {
+      watchBtn.addEventListener('click', function (e) {
+        var sec = document.getElementById('video');
+        if (!sec) return;
+        e.preventDefault();
+        sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(function () {
+          try {
+            var p = vid.play();
+            if (p && typeof p.catch === 'function') p.catch(function () {});
+          } catch (_) {}
+        }, 350);
+      });
+    }
   })();
 </script>
 </body>

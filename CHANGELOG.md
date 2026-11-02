@@ -1,5 +1,12 @@
 # CHANGELOG · asc-watcher
 
+## 2026-11-02
+
+- **上线官方产品宣传片影院模块 (`#video`) 与中英双语 78 秒 Launch-Film (`index.html`, `index.en.html`, `en/index.html`, `style.css`, `promo.mp4`, `promo-en.mp4`, `cover.png`, `cover-en.png`)**：
+  - 在 `index.html`、`index.en.html` 与 `en/index.html` 顶部导航栏新增「宣传片 / Film」锚点，首屏 CTA 区域新增 `#heroWatchBtn`（「🎬 观看官方宣传片 / Watch Launch Film」平滑滚动并自动播放）；
+  - 新增 `#video` 官方产品宣传片影院模块（`.promo-video-sec`），分别挂载中文版 `promo.mp4`（配 `cover.png`）与英文版 `promo-en.mp4`（配 `cover-en.png`），BGM 采用契合开发者数据看板题材的 `bgm-tech-house.mp3`（Tech House ~124 BPM）；
+  - 集成 8 个时间戳章节快跳胶囊（`00:00` 销售与趋势校准 → `00:10` iPhone Duo 双屏工作台 → `00:20` 一键过审发布与里程碑 → `00:30` 全球评论秒级回复 → `00:40` 全球地域与90天曲线 → `00:50` AI 增长军师与 TG 闭环 → `01:00` 本机密钥与桌面小组件 → `01:10` 品牌终章），支持播放进度实时高亮联动与点击快跳。
+
 ## 2026-10-30
 
 - **接入官方 App Store 下载跳转链接 (`https://apps.apple.com/app/id6828810863`)**：
